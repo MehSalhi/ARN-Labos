@@ -2,9 +2,10 @@
 title: "ARN - Laboratory 03"
 
 author: 
+- Anthony Coke
 - Guilain Mbayo
 - Mehdi Salhi
-date : 25.04.2022
+date : \today
 titlepage: true
 logo: figures/logo.png
 toc: true
@@ -12,9 +13,6 @@ toc-own-page: true
 ...
 
 # Introduction
-# Hold-out validation vs cross-validation
-# Model bulding
-# Speaker recognition experiments
 
 # Report
 ## Man vs Woman
@@ -41,11 +39,4 @@ toc-own-page: true
 - Procedure for model selection
 - Description of the final model
 - Performance evaluation 
-
-
-# TODO remove for final version
-![super logo de l'heig](figures/logo.png){ width=50% }
-
-Pandoc Render :
-pandoc report.md -o report.pdf --from markdown --template eisvogel --listings
-
+- Comments
