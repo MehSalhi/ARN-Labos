@@ -37,7 +37,12 @@ When we obtained a satisfying curve for the training and test sets, we generated
 
 ### Description of the final model and performance evaluation
 Our final model used the tanh validation function, used a learning rate of 0.0009, a momentum of 0.9, 2 hidden neurons, one output neuron, an epoch number of 100 and a threshold at 0.0.
-We got a MSE training of 0.059 and an MSE test of 0.178. Our confusion matrix was [[34. 2.] [3. 33.]]
+We got a MSE training of 0.059 and an MSE test of 0.178. 
+Our confusion matrix was 
+
+[34. 2.] 
+
+[3. 33.]
 
 
 ![Final Model Test](figures/ARN-L3-FinalModel-Men-Women.png){width=80%}
