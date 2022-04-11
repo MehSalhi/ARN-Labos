@@ -56,14 +56,20 @@ the normalization.
 The dataset was composed of 180 values of 13 mfccs each. This represents all the 
 male, female and kids voices. 
 
+![MFCCs Men Women Kids](figures/ARN-L3-MFCC-Men-Women-Kids.png){width=80%}
+
 ### Features to train the model
 This part required a different approach than the first one, as our goal was to classify
 the data into three classes instead of two. We labeled those data with three distinct 
 column taking the values (1,-1,-1), (-1,1,-1) or (-1,-1,1). With this, we could use the
 activation function tanh in order to train and test our dataset.
 
+![Exploring Number of Neurons](figures/ARN-L3-ExploringNeurons-Men-Women-Kids.png){width=80%}
+
 ### Procedure for model selection
 The procedure that we used to select the model was the same as for the first part, except that we specified the last three column as classes labels to the "fit" function. 
+
+![Final Model Test](figures/ARN-L3-FinalModel-Men-Women.png){width=80%}
 
 ### Description of the final model
 
@@ -77,6 +83,8 @@ Our dataset was composed of 360 values of 13 mfccs each. We used all the natural
 values as well as all the synthetic voices. Our objective for this experiment was to 
 classify values as either human or synthetic.
 
+![MFCCs Men Women Kids Synthetic](figures/ARN-L3-MFCC-Men-Women-Kids-Synth.png){width=80%}
+
 ### Features to train the model
 We chose again to use the tanh function for this part, as it was easy for two classes to put the value one for the first and minus one for the second.
 As tanh output value between minus one and plus one, we can get better learning curves than with sigmoïdal, which give an output between zero and one.
@@ -89,6 +97,8 @@ composed of different values.
 
 ### Description of the final model
 The final model is similar to the first one (man and woman only)
+
+![Final Model Men Women Kids Synthetic](figures/ARN-L3-FinalModel-Men-Women-Kids-Synth.png){width=80%}
 
 ### Performance evaluation 
 We came out with the following values for the evaluation of our final model:
