@@ -71,10 +71,7 @@ The procedure that we used to select the model was the same as for the first par
 
 ![Final Model Test](figures/ARN-L3-FinalModel-Men-Women.png){width=80%}
 
-### Description of the final model
-
-
-### Performance evaluation 
+### Description of the final model and Performance evaluation 
 
 ## Final experiment
 
