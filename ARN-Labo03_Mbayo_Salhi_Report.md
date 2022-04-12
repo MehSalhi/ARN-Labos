@@ -18,6 +18,8 @@ toc-own-page: true
 The purpose of this experiment was to train our model to be able to
 differentiate between men and women.
 
+> The associated notebook for this experiment is 'MaleFemale-model_selection.ipynb'
+
 ## Number of observations
 Our dataset consist of audio samples of vowels pronounced by men and women.
 For this part, we have treated 36 values for each class (men and women).
@@ -50,12 +52,22 @@ We measured the performances of our model by using a 5-fold cross-validation.
 
 ![Final Model Evaluation](figures/ARN-L3-FinalModel-Men-Women.png){width=50%}
 
+We can see that our model has a good ability to generalize. Our final choice
+would be to use 4 neurons because the MSE result for the test set does not spread too
+much and it follows the train set accurately. Also, having only 4 neurons avoid
+the risk of overfitting and is a simple enough model.
+
+We also computed the following scores to confirm the performances of our model:
+
+- Accuracy :  0.97
+- F1-Score: 0.97
+
 ## Comments
-We had a problem with data normalizations. At first, we normalized female and male dataset
+We had a problem with data normalizations. At first, we normalized the female and male dataset
 separately, which produced a curious error. We needed to give output value between 0 and 1
 instead of -1 and 1 for the tanh validation function in order to get acceptables MSE curves 
 for both training and test sets. This problem has been fixed by merging both dataset before 
-the normalization.
+the normalization, which is of course the correct way to normalize a dataset.
 
 # Man vs Woman vs Children
 
