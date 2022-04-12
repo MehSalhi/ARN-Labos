@@ -60,8 +60,7 @@ Results :
 
 - MSE on train set : 0.059
 - MSE on test set : 0.178. 
-
-Our confusion matrix was 
+- Our confusion matrix was 
 
 [35. 1.] 
 
@@ -80,9 +79,13 @@ a significant gap between the train error and test error, but it does the job.
 We also computed the following scores to confirm the performance of our model:
 
 **Male:**
+
 - Accuracy :  0.972
 - F1-Score : 0.972
+
+
 **Female:**
+
 - Accuracy : 0.972
 - F1-Score : 0.972
 
@@ -142,11 +145,11 @@ Results
 - MSE for test of 0.32
 - Our confusion matrix was 
 
-    [[ 33.   3.   0.]
+[ 33.   3.   0.]
 
-    [  1.  17.   9.]
+[  1.  17.   9.]
 
-    [  2.  12.  94.]]
+[  2.  12.  94.]
 
 We measured the performances of our model by using a 5-fold cross-validation.
 
@@ -163,14 +166,19 @@ We also computed the following scores to confirm the performances of our model:
 
 
 **Male:**
+
 - Accuracy :  ~0.96
 - F1-Score : ~0.96
 
+
 **Female:**
+
 - Accuracy : ~0.97
 - F1-Score : ~0.61
 
+
 **Kid:**
+
 - Accuracy : ~0.86
 - F1-Score : ~0.89
 
@@ -237,16 +245,17 @@ We came out with the following values for the evaluation of our final model:
 - MSE test :  0.159
 - Confusion matrix:
 
-    [[ 174.    6.]
+[ 174.    6.]
 
-    [  13.  167.]]
-
+[  13.  167.]
 
 **Human:**
+
 - Accuracy : ~0.95
 - F1-Score : ~0.95
 
 **Synthetic:**
+
 - Accuracy : ~0.95
 - F1-Score : ~0.95
 
