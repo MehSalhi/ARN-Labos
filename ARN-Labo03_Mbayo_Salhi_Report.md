@@ -198,7 +198,7 @@ classify values as either human or synthetic.
 ![MFCCs Men Women Kids Synthetic](figures/ARN-L3-MFCC-Men-Women-Kids-Synth.png){width=80%}
 
 ## Features to train the model
-In this experiment, we could see that the columns 1 and 2 of ours mfccs seemed to be 
+In this experiment, we could see that the columns 1 and 2 of our mfccs seemed to be 
 sufficient to classify our dataset. We tried to apply the same method as for precedents
 parts, but using only those two colums and got very good curves on our graphs. But in 
 the end, the confusion matrix wasn't good at all. We decided to go back to taking all our 
