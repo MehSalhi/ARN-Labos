@@ -28,11 +28,16 @@ We then computed 13 MFCCs for each sample.
 ![Boxplot of the MFCCs for men and women](figures/ARN-L3-MFCC-Men-Women.png)
 
 ## Features to train the model
-We chose to use the tanh function for this part, as it was easy for two classes to put the value 1 for the first and -1 for the second. 
-As tanh output value between minus one and plus one, we can get better learning curves than with sigmoïdal, which give an output between zero and one.
+As we can see on the precedent diagram, there are some mfccs that are better than
+other to classify our dataset. For exemple, the mfcc number 9 is quiet different between 
+male and female voices. However, we can see as well that some of their values are overlapping.
+As none of the mfccs seemed sufficient in itself or in combination with some other, we chose
+to use the whole dataset in order to get classification as accurate as possible.
 
 ## Procedure for model selection
 The very first step after getting the dataset is to normalize and label it.
+We chose to use the tanh function for this part, as it was easy for two classes to put the value 1 for the first and -1 for the second.
+As tanh output value between minus one and plus one, we got better learning curves than with sigmoïdal, which give an output between zero and one.
 Then, in order to choose the best parameters for our model, we tried at first the basis value of 0.001 for the learning rate, 0.5 for the momentum and 50 epochs. 
 After observing the results, we adjusted our parameters. Those steps where repeated several times in order to narrow our results.
 When we obtained a satisfying curve for the training and test sets, we generated the confusion matrix to verify that our datas were indeed well classified.
@@ -96,16 +101,21 @@ male, female and kids voices.
 ![MFCCs Men Women Kids](figures/ARN-L3-MFCC-Men-Women-Kids.png){width=80%}
 
 ## Features to train the model
+For this second part, we had the same observation as for the first. The mfccs of the three
+classes were to close to one another to be taken independently, but by taking the whole 
+dataset, we were able to separate each classe from another due to some little differences 
+on several of the mfccs.
+
+## Procedure for model selection
 This part required a different approach than the first one, as our goal was to classify
-the data into three classes instead of two. We labeled those data with three distinct 
+the data into three classes instead of two. We labeled those data with three distinct
 columns taking the values (1,-1,-1), (-1,1,-1) or (-1,-1,1). With this, we could use the
 activation function tanh in order to train and test our dataset.
 
+Other than that, the procedure that we used to select the model was the same as for the first part, 
+except that we specified the last three column as classes labels to the "fit" function. 
+
 ![Exploring Number of Neurons](figures/ARN-L3-ExploringNeurons-Men-Women-Kids.png){width=80%}
-
-## Procedure for model selection
-The procedure that we used to select the model was the same as for the first part, except that we specified the last three column as classes labels to the "fit" function. 
-
 ## Description of the final model and Performance evaluation 
 
 Our final model uses the following hyper-parameters: 
