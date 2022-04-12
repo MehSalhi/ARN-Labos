@@ -102,7 +102,7 @@ male, female and kids voices.
 
 ## Features to train the model
 For this second part, we had the same observation as for the first. The mfccs of the three
-classes were to close to one another to be taken independently, but by taking the whole 
+classes were too close to one another to be taken independently, but by taking the whole 
 dataset, we were able to separate each classe from another due to some little differences 
 on several of the mfccs.
 
@@ -116,6 +116,7 @@ Other than that, the procedure that we used to select the model was the same as 
 except that we specified the last three column as classes labels to the "fit" function. 
 
 ![Exploring Number of Neurons](figures/ARN-L3-ExploringNeurons-Men-Women-Kids.png){width=80%}
+
 ## Description of the final model and Performance evaluation 
 
 Our final model uses the following hyper-parameters: 
@@ -161,7 +162,7 @@ The results of our confusion matrix are inaccurate. It seems to be due to the im
 of the cross-validation function, which seems to act oddly when in presence of three classes.
 As a result, our F1-score and accuracies are also biased, but the different diagrams and calculation
 are correct. A solution to this problem would be to use sklearn instead of the given functions,
-but we saw this problem to late and didn't want to modify our code the day of the deadline.
+but we saw this problem too late and didn't want to modify our code the day of the deadline.
 
 # Final experiment
 
