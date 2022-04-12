@@ -87,11 +87,11 @@ the normalization, which is of course the correct way to normalize a dataset.
 The purpose of this experiment was to train our model to be able to
 differentiate between men, women and kids.
 
+> The associated notebook for this experiment is 'MaleFemaleKid-model_selection.ipynb'
+
 ## Number of observations
 The dataset was composed of 180 values of 13 mfccs each. This represents all the 
 male, female and kids voices. 
-
-> The associated notebook for this experiment is 'MaleFemaleKid-model_selection.ipynb'
 
 ![MFCCs Men Women Kids](figures/ARN-L3-MFCC-Men-Women-Kids.png){width=80%}
 
@@ -108,8 +108,9 @@ The procedure that we used to select the model was the same as for the first par
 
 ## Description of the final model and Performance evaluation 
 
-Our final model used the tanh validation function with the following hyper-parameters: 
+Our final model uses the following hyper-parameters: 
 
+- tanh activation function
 - learning rate : 0.0008
 - momentum : 0.9
 - 2 hidden neurons
@@ -131,7 +132,7 @@ Results
 
 We measured the performances of our model by using a 5-fold cross-validation.
 
-![Final Model Test](figures/ARN-L3-FinalModel-Men-Women-Kids.png){width=80%}
+![Final Model Test](figures/ARN-L3-FinalModel-Men-Women-Kids.png){width=60%}
 
 We can directly see that this problem was harder to generalize. The result are
 not as good as with only men and women, which is expected.
@@ -146,6 +147,11 @@ We also computed the following scores to confirm the performances of our model:
 - F1-Score: 0.91
 
 # Final experiment
+
+The purpose of this experiment was to train our model to be able to
+differentiate between natural and synthetic voices.
+
+> The associated notebook for this experiment is 'MaleFemaleKidSynthetic-model_selection.ipynb'
 
 ## Number of observations
 Our dataset was composed of 360 values of 13 mfccs each. We used all the natural voices 
@@ -165,22 +171,37 @@ Of course, the exploration of hyper-parameters was different as the dataset was 
 composed of different values.
 
 ## Description of the final model
-The final model is similar to the first one (man and woman only)
+The final model is similar to the first one (man and woman only) but has even
+better scores.
 
-![Final Model Men Women Kids Synthetic](figures/ARN-L3-FinalModel-Men-Women-Kids-Synth.png){width=80%}
+![Final Model Men Women Kids Synthetic](figures/ARN-L3-FinalModel-Men-Women-Kids-Synth.png){width=60%}
 
 ## Performance evaluation 
+
+Our final model uses the following hyper-parameters: 
+
+- tanh activation function
+- learning rate : 0.0008
+- momentum : 0.5
+- 2 hidden neurons
+- 3 output neurons
+- Number of epochs : 250
+- threshold : 0.0
+
 We came out with the following values for the evaluation of our final model:
 
-- MSE training:  0.12012370859086838
-- MSE test:  0.15383503249177605
+- MSE training :  0.117
+- MSE test :  0.159
+- Accuracy : 0.947
+- F1-score : 0.948
 - Confusion matrix:
 
-    [176.   4.]
+    [[ 174.    6.]
 
-    [ 12. 168.]
+    [  13.  167.]]
 
-Those results look pretty good, even if there is some little error, especially in the second class.
+The results shows that this problem is not hard to generalize for our model,
+even with only 2 neurons.
 
 ## Comments
 This part was the easiest as we widely took advantage of our past experiences with the 
