@@ -62,9 +62,9 @@ Results :
 
 Our confusion matrix was 
 
-[34. 2.] 
+[35. 1.] 
 
-[3. 33.]
+[1. 35.]
 
 We measured the performances of our model by using a 5-fold cross-validation.
 
@@ -171,12 +171,18 @@ classify values as either human or synthetic.
 ![MFCCs Men Women Kids Synthetic](figures/ARN-L3-MFCC-Men-Women-Kids-Synth.png){width=80%}
 
 ## Features to train the model
-We chose again to use the tanh function for this part, as it was easy for two classes to put the value one for the first and minus one for the second.
-As tanh output value between minus one and plus one, we can get better learning curves than with sigmoïdal, which give an output between zero and one.
+In this experiment, we could see that the columns 1 and 2 of ours mfccs seemed to be 
+sufficient to classify our dataset. We tried to apply the same method as for precedents
+parts, but using only those two colums and got very good curves on our graphs. But in 
+the end, the confusion matrix wasn't good at all. We decided to go back to taking all our 
+mfccs in order to correct the problem and to have a more generic model, and it did correct 
+the problem.
 
 ## Procedure for model selection
 As our goal was to separate two classes (synthetic or human), we chose to use the same
-method as for the first part. 
+method as for the first part.
+We chose again to use the tanh function for this part, as it was easy for two classes to put the value one for the first and minus one for the second.
+As tanh output value between minus one and plus one, we can get better learning curves than with sigmoïdal, which give an output between zero and one.
 Of course, the exploration of hyper-parameters was different as the dataset was bigger and 
 composed of different values.
 
