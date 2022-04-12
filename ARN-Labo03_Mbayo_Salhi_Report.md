@@ -245,6 +245,7 @@ We came out with the following values for the evaluation of our final model:
 **Human:**
 - Accuracy : ~0.95
 - F1-Score : ~0.95
+
 **Synthetic:**
 - Accuracy : ~0.95
 - F1-Score : ~0.95
