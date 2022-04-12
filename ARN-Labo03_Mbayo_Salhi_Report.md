@@ -156,6 +156,13 @@ We also computed the following scores to confirm the performances of our model:
 - Accuracy :  0.96
 - F1-Score: 0.91
 
+## Comments
+The results of our confusion matrix are inaccurate. It seems to be due to the implementation
+of the cross-validation function, which seems to act oddly when in presence of three classes.
+As a result, our F1-score and accuracies are also biased, but the different diagrams and calculation
+are correct. A solution to this problem would be to use sklearn instead of the given functions,
+but we saw this problem to late and didn't want to modify our code the day of the deadline.
+
 # Final experiment
 
 The purpose of this experiment was to train our model to be able to
