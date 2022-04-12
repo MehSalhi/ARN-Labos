@@ -40,8 +40,21 @@ When we obtained a satisfying curve for the training and test sets, we generated
 ![Exploring the number of neurons](figures/ARN-L3-ExploringNeuron-Men-Women.png)
 
 ## Description of the final model and performance evaluation
-Our final model used the tanh validation function, used a learning rate of 0.0009, a momentum of 0.9, 2 hidden neurons, one output neuron, an epoch number of 100 and a threshold at 0.0.
-We got a MSE training of 0.059 and an MSE test of 0.178. 
+Our final model used the following hyper-parameters: 
+
+- tanh activation function
+- learning rate of 0.0009
+- momentum of 0.9
+- 2 hidden neurons
+- one output neuron
+- number of epochs:  of 100
+- threshold at 0.0.
+
+Results :
+
+- MSE on train set : 0.059
+- MSE on test set : 0.178. 
+
 Our confusion matrix was 
 
 [34. 2.] 
@@ -53,9 +66,9 @@ We measured the performances of our model by using a 5-fold cross-validation.
 ![Final Model Evaluation](figures/ARN-L3-FinalModel-Men-Women.png){width=50%}
 
 We can see that our model has a good ability to generalize. Our final choice
-would be to use 4 neurons because the MSE result for the test set does not spread too
-much and it follows the train set accurately. Also, having only 4 neurons avoid
-the risk of overfitting and is a simple enough model.
+would be to use 2 or 4 neurons because the MSE result for the test set does not spread too
+much and it follows the train set accurately. Also, having a small number of neurons 
+avoids the risk of overfitting and is a simple enough model.
 
 We also computed the following scores to confirm the performances of our model:
 
@@ -78,12 +91,14 @@ differentiate between men, women and kids.
 The dataset was composed of 180 values of 13 mfccs each. This represents all the 
 male, female and kids voices. 
 
+> The associated notebook for this experiment is 'MaleFemaleKid-model_selection.ipynb'
+
 ![MFCCs Men Women Kids](figures/ARN-L3-MFCC-Men-Women-Kids.png){width=80%}
 
 ## Features to train the model
 This part required a different approach than the first one, as our goal was to classify
 the data into three classes instead of two. We labeled those data with three distinct 
-column taking the values (1,-1,-1), (-1,1,-1) or (-1,-1,1). With this, we could use the
+columns taking the values (1,-1,-1), (-1,1,-1) or (-1,-1,1). With this, we could use the
 activation function tanh in order to train and test our dataset.
 
 ![Exploring Number of Neurons](figures/ARN-L3-ExploringNeurons-Men-Women-Kids.png){width=80%}
@@ -91,9 +106,44 @@ activation function tanh in order to train and test our dataset.
 ## Procedure for model selection
 The procedure that we used to select the model was the same as for the first part, except that we specified the last three column as classes labels to the "fit" function. 
 
-![Final Model Test](figures/ARN-L3-FinalModel-Men-Women.png){width=80%}
-
 ## Description of the final model and Performance evaluation 
+
+Our final model used the tanh validation function with the following hyper-parameters: 
+
+- learning rate : 0.0008
+- momentum : 0.9
+- 2 hidden neurons
+- 3 output neurons
+- Number of epochs : 150
+- threshold : 0.0
+
+Results
+
+- MSE for train set: 0.17
+- MSE for test of 0.32
+- Our confusion matrix was 
+
+    [[ 33.   3.   0.]
+
+    [  1.  17.   9.]
+
+    [  2.  12.  94.]]
+
+We measured the performances of our model by using a 5-fold cross-validation.
+
+![Final Model Test](figures/ARN-L3-FinalModel-Men-Women-Kids.png){width=80%}
+
+We can directly see that this problem was harder to generalize. The result are
+not as good as with only men and women, which is expected.
+Our model still has a good ability to generalize. Our final choice
+would be to use 2 neurons because the MSE result for the test set does not spread too
+much and it follows the train set accurately. Also, having only 2 neurons avoid
+the risk of overfitting and is a simple enough model.
+
+We also computed the following scores to confirm the performances of our model:
+
+- Accuracy :  0.96
+- F1-Score: 0.91
 
 # Final experiment
 
