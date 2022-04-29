@@ -18,6 +18,12 @@ toc-own-page: true
 networks? What are the parameters (arguments) being used by that algorithm? What
 cost function is being used ? please, give the equation(s)
 
+> MLP_from_raw_data.ipynb
+
+> MLP_from_HOG.ipynb
+
+> CNN.ipynb
+
 # Model Complexity
 
 > 2. Model complexity: for each experiment (shallow network learning from raw data, shallow
@@ -27,10 +33,24 @@ Compute the number of weights of each model (e.g., how many weights between the
 input and the hidden layer, how many weights between each pair of layers, biases, etc..)
 and explain how do you get to the total number of weights.
 
+
+> MLP_from_raw_data.ipynb
+
+> MLP_from_HOG.ipynb
+
+> CNN.ipynb
+
 # Deep Neural Networks
 
 > 3. Do the deep neural networks have much more “capacity” (i.e., do they have more
 weights?) than the shallow ones? explain with one example
+
+> MLP_from_raw_data.ipynb
+
+> MLP_from_HOG.ipynb
+
+> CNN.ipynb
+
 
 # Tests
 
@@ -41,4 +61,10 @@ hidden neurons, for the CNN, try different number of neurons in the feed-forward
 describe the model and present the performance of the system (e.g., plot of the
 evolution of the error, final evaluation scores and confusion matrices). Comment the
 differences in results. Are there particular digits that are frequently confused?
+
+> MLP_from_raw_data.ipynb
+
+> MLP_from_HOG.ipynb
+
+> CNN.ipynb
 
