@@ -19,7 +19,9 @@ networks? What are the parameters (arguments) being used by that algorithm? What
 cost function is being used ? please, give the equation(s)
 
 > MLP_from_raw_data.ipynb
-The used algorithm is RMSprop. 
+
+The algorithm used is RMSprop. 
+
 The arguments used by this algorithm are:
 - Learning rate
 A Tensor, floating point value, or a schedule that is a tf.keras.optimizers.schedules.LearningRateSchedule, or a callable that takes no arguments and returns the actual value to use. The learning rate. Defaults to 0.001.
@@ -37,7 +39,9 @@ Optional name prefix for the operations created when applying gradients. Default
 keyword arguments. Allowed arguments are clipvalue, clipnorm, global_clipnorm. If clipvalue (float) is set, the gradient of each weight is clipped to be no higher than this value. If clipnorm (float) is set, the gradient of each weight is individually clipped so that its norm is no higher than this value. If global_clipnorm (float) is set the gradient of all weights is clipped so that their global norm is no higher than this value.
 
 The used cost function is the categorical crossentropy function. It's equation
-is: Loss=−i=1∑sizeoutput​​yi​⋅logy^​i. 
+is: 
+
+![ARN-Labo04-CrossEntrEquation](figures/ARN-Labo04-CrossEntrEquation.png)
 
 > MLP_from_HOG.ipynb
 
