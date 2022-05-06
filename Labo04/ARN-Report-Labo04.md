@@ -19,6 +19,25 @@ networks? What are the parameters (arguments) being used by that algorithm? What
 cost function is being used ? please, give the equation(s)
 
 > MLP_from_raw_data.ipynb
+The used algorithm is RMSprop. 
+The arguments used by this algorithm are:
+- Learning rate
+A Tensor, floating point value, or a schedule that is a tf.keras.optimizers.schedules.LearningRateSchedule, or a callable that takes no arguments and returns the actual value to use. The learning rate. Defaults to 0.001.
+- rho:
+Discounting factor for the history/coming gradient. Defaults to 0.9.
+- momentum:
+A scalar or a scalar Tensor. Defaults to 0.0.
+- epsilon:
+A small constant for numerical stability. This epsilon is "epsilon hat" in the Kingma and Ba paper (in the formula just before Section 2.1), not the epsilon in Algorithm 1 of the paper. Defaults to 1e-7.
+- centered:
+Boolean. If True, gradients are normalized by the estimated variance of the gradient; if False, by the uncentered second moment. Setting this to True may help with training, but is slightly more expensive in terms of computation and memory. Defaults to False.
+- name:
+Optional name prefix for the operations created when applying gradients. Defaults to "RMSprop".
+- **kwargs:
+keyword arguments. Allowed arguments are clipvalue, clipnorm, global_clipnorm. If clipvalue (float) is set, the gradient of each weight is clipped to be no higher than this value. If clipnorm (float) is set, the gradient of each weight is individually clipped so that its norm is no higher than this value. If global_clipnorm (float) is set the gradient of all weights is clipped so that their global norm is no higher than this value.
+
+The used cost function is the categorical crossentropy function. It's equation
+is: Loss=−i=1∑sizeoutput​​yi​⋅logy^​i. 
 
 > MLP_from_HOG.ipynb
 
