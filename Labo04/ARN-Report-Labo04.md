@@ -55,17 +55,34 @@ and explain how do you get to the total number of weights.
 
 
 > MLP_from_raw_data.ipynb
-Inputs:
-Outputs: 
+Inputs: 784, which are each pixels in a picture
+Outputs: 10 classes (numbers between 0 and 9)
 Activation function: tanh
 Activation function for output layer: softmax
 Neurons in hidden layer: 250
 Batch size: 4096
 Dropout: 0.5
 Number of epoch: 150
-
+The model has 784 inputs, 1 hidden layer that contains 250 neurons and 10
+outputs. The number of weights between the inputs and the hidden layer is 784 *
+750 = 196000. The number of weights between the hidden layer and the outputs is
+250 * 10 = 2500. The total number of weights is 198500.
 
 > MLP_from_HOG.ipynb
+Inputs: 392
+Outputs: 10 classes (numbers between 0 and 9)
+Activation function: sigmoïd
+Activation function for output layer: softmax
+Neurons in hidden layer: 200
+Batch size: 1024
+pixel per cell: 7
+n_orientation: 16
+number of epoch: 250 (but we could see that 150 is enough)
+Dropout: 0.5
+The model has 392 inputs, 1 hidden layer that contains 200 neurons and 10
+outputs. The number of weights between the inputs and the hidden layer is 392 *
+200 = 78400. The number of weights between the hidden layer and the outputs is
+200 * 10 = 2000. The total number of weights is 80400.
 
 > CNN.ipynb
 
