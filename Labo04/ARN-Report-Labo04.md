@@ -35,7 +35,7 @@ A small constant for numerical stability. This epsilon is "epsilon hat" in the K
 Boolean. If True, gradients are normalized by the estimated variance of the gradient; if False, by the uncentered second moment. Setting this to True may help with training, but is slightly more expensive in terms of computation and memory. Defaults to False.
 - name:
 Optional name prefix for the operations created when applying gradients. Defaults to "RMSprop".
-- **kwargs:
+- \*\*kwargs:
 keyword arguments. Allowed arguments are clipvalue, clipnorm, global_clipnorm. If clipvalue (float) is set, the gradient of each weight is clipped to be no higher than this value. If clipnorm (float) is set, the gradient of each weight is individually clipped so that its norm is no higher than this value. If global_clipnorm (float) is set the gradient of all weights is clipped so that their global norm is no higher than this value.
 
 The used cost function is the categorical crossentropy function. It's equation
@@ -44,8 +44,17 @@ is:
 ![ARN-Labo04-CrossEntrEquation](figures/ARN-Labo04-CrossEntrEquation.png)
 
 > MLP_from_HOG.ipynb
+The same optimization algorithm as for the row_data.ipynb (RMSprop) is used. 
+Its arguments are the same.
+The cost function that is used is also the categorical crossentropy (equation
+above).
 
 > CNN.ipynb
+The same optimization algorithm as for the row_data.ipynb and HOG.ipynb (RMSprop) is used. 
+Its arguments are the same.
+The cost function that is used is also the categorical crossentropy (equation
+above).
+
 
 # Model Complexity
 
