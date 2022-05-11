@@ -43,18 +43,6 @@ is:
 
 ![ARN-Labo04-CrossEntrEquation](figures/ARN-Labo04-CrossEntrEquation.png)
 
-> MLP_from_HOG.ipynb
-The same optimization algorithm as for the row_data.ipynb (RMSprop) is used. 
-Its arguments are the same.
-The cost function that is used is also the categorical crossentropy (equation
-above).
-
-> CNN.ipynb
-The same optimization algorithm as for the row_data.ipynb and HOG.ipynb (RMSprop) is used. 
-Its arguments are the same.
-The cost function that is used is also the categorical crossentropy (equation
-above).
-
 
 # Model Complexity
 
@@ -82,11 +70,12 @@ and explain how do you get to the total number of weights.
 > 3. Do the deep neural networks have much more “capacity” (i.e., do they have more
 weights?) than the shallow ones? explain with one example
 
-> MLP_from_raw_data.ipynb
-
-> MLP_from_HOG.ipynb
-
-> CNN.ipynb
+The deep neural network have more hidden layer than the shallow ones, but it
+doesn't necessary mean that it has more neurons in it. For exemple, in this lab
+we use 300 neurons in the hidden layer for the shallows network (raw_data and
+HOG), against only 25 neurons for the deep one (CNN). The deep neural networks
+have more capacity, because they usually need less components to achieve the
+same goal or better than a shallow neural network. 
 
 
 # Tests
