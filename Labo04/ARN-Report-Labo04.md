@@ -181,27 +181,27 @@ We can see in this experiment that there's clearly an overfitting.
 
 ![ARN-HOG-Plot-sigmoid-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
 
-![ARN-HOG-Plot-relu-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-relu-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250.png)
+![ARN-HOG-Plot-relu-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-relu-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
 
-![ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png)width=50%}
 
-![ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-Plot-tanh-Pixel7_Or8_Neur150-Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or8_Neur150-Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-Plot-tanh-Pixel7_Or8_Neur150-Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or8_Neur150-Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-Plot-relu-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-Plot-relu-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-Plot-tanh-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png)
+![ARN-HOG-Plot-tanh-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
 
 
 > CNN.ipynb
