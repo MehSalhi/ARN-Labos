@@ -68,9 +68,13 @@ and explain how do you get to the total number of weights.
 
 > MLP_from_raw_data.ipynb
 
+
 > MLP_from_HOG.ipynb
 
 > CNN.ipynb
+
+> Fashion MNIST
+
 
 # Deep Neural Networks
 
