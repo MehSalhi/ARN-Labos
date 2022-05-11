@@ -85,7 +85,13 @@ outputs. The number of weights between the inputs and the hidden layer is 392 *
 200 * 10 = 2000. The total number of weights is 80400.
 
 > CNN.ipynb
-
+Inputs: 144 
+Outputs: 10 classes (numbers between 0 and 9)
+Activation function: 
+Activation function for output layer: softmax
+Neurons in hidden layer: 
+Batch size: 
+number of epoch:
 
 > Fashion_MNIST.ipynb
 
