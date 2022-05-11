@@ -208,7 +208,7 @@ We can see in this experiment that there's clearly an overfitting.
 
 ![ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png)width=50%}
+![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
 
 ![ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
@@ -228,4 +228,29 @@ We can see in this experiment that there's clearly an overfitting.
 
 
 > CNN.ipynb
+
+![ARN-CNN-Plot-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_25L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50.png){width=50%}
+
+![ARN-CNN-Plot-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_10L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50.png){width=50%}
+
+
+![ARN-CNN-Plot-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_5L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50.png){width=50%}
+
+![ARN-CNN-Plot-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_35L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50.png){width=50%}
+
+
+![ARN-CNN-Plot-tanh-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-tanh-Batch256_25L4_Epoch50.png){width=50%}
+
+
+![ARN-CNN-Plot-sigmoid-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-sigmoid-Batch256_25L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-sigmoid-Batch256_25L4_Epoch50](figures/ARN-CNN-ConfMat-sigmoid-Batch256_25L4_Epoch50.png){width=50%}
 
