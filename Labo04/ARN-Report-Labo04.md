@@ -55,17 +55,34 @@ and explain how do you get to the total number of weights.
 
 
 > MLP_from_raw_data.ipynb
-Inputs:
-Outputs: 
+Inputs: 784, which are each pixels in a picture
+Outputs: 10 classes (numbers between 0 and 9)
 Activation function: tanh
 Activation function for output layer: softmax
 Neurons in hidden layer: 250
 Batch size: 4096
 Dropout: 0.5
 Number of epoch: 150
-
+The model has 784 inputs, 1 hidden layer that contains 250 neurons and 10
+outputs. The number of weights between the inputs and the hidden layer is 784 *
+750 = 196000. The number of weights between the hidden layer and the outputs is
+250 * 10 = 2500. The total number of weights is 198500.
 
 > MLP_from_HOG.ipynb
+Inputs: 392
+Outputs: 10 classes (numbers between 0 and 9)
+Activation function: sigmoïd
+Activation function for output layer: softmax
+Neurons in hidden layer: 200
+Batch size: 1024
+pixel per cell: 7
+n_orientation: 16
+number of epoch: 250 (but we could see that 150 is enough)
+Dropout: 0.5
+The model has 392 inputs, 1 hidden layer that contains 200 neurons and 10
+outputs. The number of weights between the inputs and the hidden layer is 392 *
+200 = 78400. The number of weights between the hidden layer and the outputs is
+200 * 10 = 2000. The total number of weights is 80400.
 
 > CNN.ipynb
 
@@ -117,11 +134,11 @@ We can see in this experiment that there's clearly an overfitting.
 
 ![ARN-RAW-ConfMat-sigmoid-softmax_Batch2048_Droptout_Epoch150](figures/ARN-RAW-ConfMat-sigmoid-softmax_Batch2048_Droptout_Epoch150.png){width=50%}
 
-![ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
+![ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
-![ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
+![ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
-![ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
+![ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
 ![ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
 
@@ -145,7 +162,89 @@ We can see in this experiment that there's clearly an overfitting.
 
 > MLP_from_HOG.ipynb
 
+![ARN-HOG-Plot-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-Plot-tanh-softmax-Neur200-Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-tanh-softmax-Neur200-Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-ConfMat-tanh-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-tanh-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-Plot-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-Plot-relu-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-relu-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-ConfMat-relu-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-relu-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+![ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-Plot-relu-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-Plot-relu-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-Plot-relu-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-relu-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-Plot-sigmoid-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-Plot-relu-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-relu-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+
+![ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-Plot-tanh-Pixel7_Or8_Neur150-Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or8_Neur150-Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-Plot-relu-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
+
+![ARN-HOG-Plot-tanh-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
 
 
 > CNN.ipynb
+
+![ARN-CNN-Plot-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_25L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50.png){width=50%}
+
+![ARN-CNN-Plot-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_10L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50.png){width=50%}
+
+
+![ARN-CNN-Plot-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_5L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50.png){width=50%}
+
+![ARN-CNN-Plot-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_35L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50.png){width=50%}
+
+
+![ARN-CNN-Plot-tanh-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-tanh-Batch256_25L4_Epoch50.png){width=50%}
+
+
+![ARN-CNN-Plot-sigmoid-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-sigmoid-Batch256_25L4_Epoch50.png){width=50%}
+
+![ARN-CNN-ConfMat-sigmoid-Batch256_25L4_Epoch50](figures/ARN-CNN-ConfMat-sigmoid-Batch256_25L4_Epoch50.png){width=50%}
 
