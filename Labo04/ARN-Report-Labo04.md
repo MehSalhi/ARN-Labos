@@ -55,6 +55,14 @@ and explain how do you get to the total number of weights.
 
 
 > MLP_from_raw_data.ipynb
+Inputs:
+Outputs: 
+Activation function: tanh
+Activation function for output layer: softmax
+Neurons in hidden layer: 250
+Batch size: 4096
+Dropout: 0.5
+Number of epoch: 150
 
 
 > MLP_from_HOG.ipynb
@@ -76,7 +84,11 @@ we use 300 neurons in the hidden layer for the shallows network (raw_data and
 HOG), against only 25 neurons for the deep one (CNN). The deep neural networks
 have more capacity, because they usually need less components to achieve the
 same goal or better than a shallow neural network. 
-
+If we compare the weights of each model, the shallow one will have more weight
+than the deep one. For exemple, a model with 2 entries, 6 neurons in one hidden
+layer and 2 output, we get 2 * 6 + 6 * 2 = 24 links that have each their weight.
+For the same model but with 3 hidden layers, we got 2 * 2 + 2 * 2 + 2 * 2 + 2 *
+2 = 16 links, and so 16 weights.
 
 # Tests
 
