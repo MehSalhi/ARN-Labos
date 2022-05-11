@@ -73,7 +73,8 @@ and explain how do you get to the total number of weights.
 
 > CNN.ipynb
 
-> Fashion MNIST
+
+> Fashion_MNIST.ipynb
 
 
 # Deep Neural Networks
@@ -100,7 +101,50 @@ differences in results. Are there particular digits that are frequently confused
 
 > MLP_from_raw_data.ipynb
 
+![ARN-RAW-Plot-tanh-softmax_Batch2048_NoDropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax_Batch2048_NoDropout_Epoch150.png){width=50%}
+
+![ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150.png){width=50%}
+
+We can see in this experiment that there's clearly an overfitting. 
+
+![ARN-RAW-Plot-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
+
+
+![ARN-RAW-Plot-sigmoid-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-ConfMat-sigmoid-softmax_Batch2048_Droptout_Epoch150](figures/ARN-RAW-ConfMat-sigmoid-softmax_Batch2048_Droptout_Epoch150.png){width=50%}
+
+![ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
+
+![ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
+
+![ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
+
+![ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
+
+![ARN-RAW-Plot-relu_softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-relu_softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-ConfMat-relu-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-relu-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-Plot-relu-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-relu-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-ConfMat-relu-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-relu-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-Plot-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-Plot-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+
+![ARN-RAW-ConfMat-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+
+
+
 > MLP_from_HOG.ipynb
+
+
 
 > CNN.ipynb
 
