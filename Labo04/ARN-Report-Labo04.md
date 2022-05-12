@@ -80,8 +80,8 @@ Dropout: 0.5
 Number of epoch: 150
 
 The model has 784 inputs, 1 hidden layer that contains 250 neurons and 10
-outputs. The number of weights between the inputs and the hidden layer is 784 *
-250 = 196000. The number of weights between the hidden layer and the outputs is
+outputs. The number of weights between the inputs and the hidden layer is 
+784 \* 250 = 196000. The number of weights between the hidden layer and the outputs is
 250 \* 10 = 2500. The total number of weights is 198500.
 
 The model has 250 + 10 = 260 bias (1 per neuron).
@@ -109,9 +109,9 @@ number of epoch: 100
 Dropout: 0.5
 
 The model has 392 inputs, 1 hidden layer that contains 200 neurons and 10
-outputs. The number of weights between the inputs and the hidden layer is 392 *
-200 = 78400. The number of weights between the hidden layer and the outputs is
-200 * 10 = 2000. The total number of weights is 80400.
+outputs. The number of weights between the inputs and the hidden layer is 
+392 \* 200 = 78400. The number of weights between the hidden layer and the outputs is
+200 \* 10 = 2000. The total number of weights is 80400.
 
 The model has 200 + 10 = 210 bias (1 per neuron).
 
@@ -138,8 +138,9 @@ Number of epoch: 50
 The following calculations are made for the fully connected MLP part.
 
 The model has 144 inputs, 1 hidden layer that contains 5 neurons and 10
-outputs. The number of weights between the inputs and the hidden layer is 144 *
-5 = 720. The number of weights between the hidden layer and the outputs is 5 * 10 = 50. The total number of weights is 770.
+outputs. The number of weights between the inputs and the hidden layer is 
+144 \* 5 = 720. The number of weights between the hidden layer and the outputs is 
+5 \* 10 = 50. The total number of weights is 770.
 
 The model has 5 + 10 = 15 bias (one per neuron).
 
@@ -165,9 +166,9 @@ Number of epoch: 100
 The following calculations are made for the fully connected MLP part.
 
 The model has 1764 inputs, 1 hidden layer that contains 100 neurons and 10
-outputs. The number of weights between the inputs and the hidden layer is 1764 *
-100 = 176400. The number of weights between the hidden layer and the outputs is
-100 * 10 = 1000. The total number of weights is 177400.
+outputs. The number of weights between the inputs and the hidden layer is 
+1764 \* 100 = 176400. The number of weights between the hidden layer and the outputs is
+100 \* 10 = 1000. The total number of weights is 177400.
 
 The model has 100 + 10 = 110 bias (1 per neurons).
 
@@ -178,14 +179,24 @@ weights?) than the shallow ones? explain with one example
 
 The deep neural network have more hidden layer than the shallow ones, but it
 doesn't necessary mean that it has more neurons in it. For exemple, in this lab
-we use 300 neurons in the hidden layer for the shallows network (raw_data and
-HOG), against only 25 neurons for the deep one (CNN). The deep neural networks
-have more capacity, because they usually need less components to achieve the
-same goal or better than a shallow neural network. 
+we use up to 300 neurons in the hidden layer for the shallows network (raw_data and
+HOG), against only 25 neurons for the deep one (CNN). If we define capacity as
+being the number of weights, then the shallow neural networks
+have more capacity, because they usually have more neurons and so more weights
+and bias than the deep ones. If we take into consideration the fact than deep
+neural networks need to pass datas through some features extraction layers
+before using it into the fully connected MLP, we could say that deep neural
+networks have more capacity. During our experimentations, we have seen that deep
+neural networks took more time than the shallow ones, even when they had less
+neurons in hidden layers. 
+
+The definition of capacity in this question is a little bit tricky, and so we
+described it as we thought that you would like.
+
 If we compare the weights of each model, the shallow one will have more weight
 than the deep one. For exemple, a model with 2 entries, 6 neurons in one hidden
-layer and 2 output, we get 2 * 6 + 6 * 2 = 24 links that have each their weight.
-For the same model but with 3 hidden layers, we got 2 * 2 + 2 * 2 + 2 * 2 + 2 *
+layer and 2 output, we get 2 \* 6 + 6 \* 2 = 24 links that have each their weight.
+For the same model but with 3 hidden layers, we got 2 \* 2 + 2 \* 2 + 2 \* 2 + 2 \*
 2 = 16 links, and so 16 weights.
 
 # Tests
@@ -309,7 +320,7 @@ the meeting point.
 The errors are however less significative than with tanh in the confusion
 matrix. 4, 5, 7 and 10 are the only numbers with two digits erros.
 
-## **Conclusion - RAW**
+## Conclusion - RAW
 Removing neurons seems to delay the moment when the two curves meet. We didn't
 find a model that stands out. Some models have a good graph, but some numbers
 have a 1-2% error in the confusion matrix. When computing the f1_score we
@@ -485,7 +496,7 @@ model is not really good at predicting what number it sees.
 ![ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=70%}
 
 
-## **Conclusion - HOG**
+## Conclusion - HOG
 We performed various tests and modified every parameter, we didn't find the
 perfect model. As we can see in most confusion matrices, the models tend to have
 difficulties with classifying numbers between 2 and 9. We see some values that
