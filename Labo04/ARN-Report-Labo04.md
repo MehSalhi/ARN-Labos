@@ -628,7 +628,7 @@ than that the digits are globally correctly classified even when changing the
 activation function. The f1_score we computed were around 0.95 with sometimes
 values up to 0.99.
 
-## Conclusion - CNN Fashion MNIST
+# Fashion MNIST
 
 For this experiment, we used the code provided in the CNN notebook and used the
 Fashion MNIST dataset provided by Keras. We then ran the model multiple time by
