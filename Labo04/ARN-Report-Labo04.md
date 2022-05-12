@@ -208,7 +208,7 @@ describe the model and present the performance of the system (e.g., plot of the
 evolution of the error, final evaluation scores and confusion matrices). Comment the
 differences in results. Are there particular digits that are frequently confused?
 
-> MLP_from_raw_data.ipynb
+## MLP_from_raw_data.ipynb
 
 **Model**:
 
@@ -328,7 +328,7 @@ doesn't really represent the model's behavior. Sometimes the graph clearly shows
 an overfitting but the f1_score is 0.97. So when chosing a model we should take
 everything into account, the graph, the f1-score, the confusion matrix.
 
-> MLP_from_HOG.ipynb
+## MLP_from_HOG.ipynb
 
 **Model**:
 
@@ -508,13 +508,13 @@ might be too easy. The f1_scores we computed were good and around 0.95. As
 stated in the RAW part, we think the f1_score is not sufficient to determine if
 a model is good.
 
-> CNN.ipynb
+## CNN.ipynb
 
 **Model**:
 
 - L4 neurons: 25
 - L4 activation function: Relu
-- Batch size: 2048
+- Batch size: 256
 - Epochs: 50
 
 ![ARN-CNN-Plot-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_25L4_Epoch50.png){width=50%}
@@ -532,7 +532,7 @@ epochs.
 
 - L4 neurons: 10                                        
 - L4 activation function: Relu
-- Batch size: 2048
+- Batch size: 256
 - Epochs: 50
 
 
@@ -550,7 +550,7 @@ curves seem to be stable.
 
 - L4 neurons: 5                                        
 - L4 activation function: Relu
-- Batch size: 2048
+- Batch size: 256
 - Epochs: 50
 
 
@@ -570,7 +570,7 @@ classified.
 
 - L4 neurons: 35                                        
 - L4 activation function: Relu
-- Batch size: 2048
+- Batch size: 256
 - Epochs: 50
 
 
@@ -588,7 +588,7 @@ The confusion matrix doesn't show a lot, the classification is not so bad.
 
 - L4 neurons: 25                                        
 - L4 activation function: tanh
-- Batch size: 2048
+- Batch size: 256
 - Epochs: 50
 
 
@@ -605,7 +605,7 @@ told just to change the number of neurons in the feed-forward part.
 
 - L4 neurons: 25                                        
 - L4 activation function: sigmoid
-- Batch size: 2048
+- Batch size: 256
 - Epochs: 50
 
 ![ARN-CNN-Plot-sigmoid-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-sigmoid-Batch256_25L4_Epoch50.png){width=50%}
@@ -628,7 +628,7 @@ than that the digits are globally correctly classified even when changing the
 activation function. The f1_score we computed were around 0.95 with sometimes
 values up to 0.99.
 
-## Conclusion - CNN Fashion MNIST
+# Fashion MNIST
 
 For this experiment, we used the code provided in the CNN notebook and used the
 Fashion MNIST dataset provided by Keras. We then ran the model multiple time by
