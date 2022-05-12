@@ -32,7 +32,7 @@ A value which give a inertia to the movement toward a minima in the gradient
 descent to avoid to get stuck to a local minimum. Defaults to 0.0.
 
 - **epsilon**:
-A small constant for numerical stability. It avoid to get a division by 0. Defaults to 1e-7.
+A small constant for numerical stability. It avoids to get a division by 0. Defaults to 1e-7.
 
 - **centered**:
 Boolean. If True, gradients are normalized by the estimated variance of the gradient; if False, by the uncentered second moment. Setting this to True may help with training, but is slightly more expensive in terms of computation and memory. Defaults to False.
@@ -62,7 +62,7 @@ and explain how do you get to the total number of weights.
 
 > MLP_from_raw_data.ipynb
 
-Inputs: 784, which are each pixels in a picture
+Inputs: 784, which are each pixel in a picture
 
 Outputs: 10 classes (numbers between 0 and 9)
 
@@ -91,7 +91,7 @@ Inputs: 392
 
 Outputs: 10 classes (numbers between 0 and 9)
 
-Activation function: sigmoïd
+Activation function: sigmoid
 
 Activation function for output layer: softmax
 
@@ -148,7 +148,7 @@ The model has 5 + 10 = 15 bias (one per neuron).
 Inputs: 144 for the fully connected MLP and a 28 X 28 pixels image as input for the features
 extraction part. The 28 X 28 image is passed through 1 features extraction
 layer which work with 28 X 28 images. The result is then flattened into a vector
-of 1764 values. Those values are passe as inputs to the fully connected MLP.
+of 1764 values. Those values are passed as inputs to the fully connected MLP.
 
 Outputs: 10 classes (numbers between 0 and 9)
 
@@ -177,23 +177,23 @@ The model has 100 + 10 = 110 bias (1 per neurons).
 weights?) than the shallow ones? explain with one example
 
 The deep neural network have more hidden layer than the shallow ones, but it
-doesn't necessary mean that it has more neurons in it. For exemple, in this lab
+doesn't necessary mean that it has more neurons in it. For example, in this lab
 we use up to 300 neurons in the hidden layer for the shallows network (raw_data and
 HOG), against only 25 neurons for the deep one (CNN). If we define capacity as
 being the number of weights, then the shallow neural networks
 have more capacity, because they usually have more neurons and so more weights
 and bias than the deep ones. If we take into consideration the fact than deep
-neural networks need to pass datas through some features extraction layers
+neural networks need to pass datas through some features' extraction layers
 before using it into the fully connected MLP, we could say that deep neural
-networks have more capacity. During our experimentations, we have seen that deep
-neural networks took more time than the shallow ones, even when they had less
+networks have more capacity. During our experiments, we have seen that deep
+neural networks took more time than the shallow ones, even when they had fewer
 neurons in hidden layers. 
 
-The definition of capacity in this question is a little bit tricky, and so we
+The definition of capacity in this question is a little tricky, and so we
 described it as we thought that you would like.
 
 If we compare the weights of each model, the shallow one will have more weight
-than the deep one. For exemple, a model with 2 entries, 6 neurons in one hidden
+than the deep one. For example, a model with 2 entries, 6 neurons in one hidden
 layer and 2 output, we get 2 \* 6 + 6 \* 2 = 24 links that have each their weight.
 For the same model but with 3 hidden layers, we got 2 \* 2 + 2 \* 2 + 2 \* 2 + 2 \*
 2 = 16 links, and so 16 weights.
@@ -294,7 +294,7 @@ The same numbers (4 and 7) are less good classified with two digits boxes.
 
 Setting the number of neurons to 150 changes the moment when the two curves
 meet. With tanh we see that the testing set is too simple, the testing curve is
-always below below the training one. More epochs are needed to find a stable
+always below the training one. More epochs are needed to find a stable
 ground.
 Too few neurons is not a good idea, it increases the amount of errors. We can
 see numbers up to 22. This model seems to have more difficulty to classify
@@ -316,8 +316,8 @@ numbers from 4 to 9.
 
 The result is similar with the sigmoid function, more epochs are needed to find
 the meeting point.
-The errors are however less significative than with tanh in the confusion
-matrix. 4, 5, 7 and 10 are the only numbers with two digits erros.
+The errors are however less significant than with tanh in the confusion
+matrix. 4, 5, 7 and 10 are the only numbers with two digits errors.
 
 ## Conclusion - RAW
 Removing neurons seems to delay the moment when the two curves meet. We didn't
@@ -325,7 +325,7 @@ find a model that stands out. Some models have a good graph, but some numbers
 have a 1-2% error in the confusion matrix. When computing the f1_score we
 obtained most of the time a score around 0.95 which is good. But this score
 doesn't really represent the model's behavior. Sometimes the graph clearly shows
-an overfitting but the f1_score is 0.97. So when chosing a model we should take
+an overfitting but the f1_score is 0.97. So when choosing a model we should take
 everything into account, the graph, the f1-score, the confusion matrix.
 
 ## MLP_from_HOG.ipynb
@@ -344,7 +344,7 @@ everything into account, the graph, the f1-score, the confusion matrix.
 
 ![ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=70%}
 
-We tried to use the preconfigured model but with a batch size of 512 so it could
+We tried to use the preconfigured model but with a batch size of 512, so it could
 go faster. The scores are not so bad, but the graph shows some overfitting
 starting from 10 epochs. 
 The confusion matrix shows that number 3 is often assimilated as a 5 and number
@@ -368,9 +368,9 @@ The confusion matrix shows that number 3 is often assimilated as a 5 and number
 
 We decided to try different activation functions with the preconfigured model.
 This one shows the sigmoid function. As we can see this one behaves better than
-the previous and there's almost no overfitting. However we can see that the
+the previous and there's almost no overfitting. However, we can see that the
 testing error is below the testing error until around 50 epochs which might
-signify that the test set is a little bit too easy.
+signify that the test set is a little too easy.
 The confusion matrix doesn't indicate any abnormalities.
 
 
@@ -392,7 +392,7 @@ The confusion matrix doesn't indicate any abnormalities.
 Those previous attempts where done with 4 pixels, we also tried 7 pixels. This
 example with the tanh function clearly depicts a test set that is too easy. The
 testing curves never overlaps the testing one. We notice that the test score is
-really bad compared to the previous models.
+terrible compared to the previous models.
 Of course the confusion matrix shows a similar result. This model doesn't seem
 to recognize the numbers between 2 and 9. In some cases we can see up to 35
 wrong classification in one box.
@@ -412,7 +412,7 @@ wrong classification in one box.
 
 ![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=70%}
 
-By changing the activation function to sigmoid we see a clear improvment with a
+By changing the activation function to sigmoid we see a clear improvement with a
 slightly lower score.
 The confusion matrix also improved, but those numbers are still too high. We can
 actually see a value of 30 which is not good.
@@ -436,7 +436,7 @@ We tried to increase the batch size which improved the curve for tanh activation
 function and lowered the gap between the two curves. The test set looks still
 too easy for the model.
 The confusion matrix shows really bad results. Numbers from 2 to 9
-classification generates many erros. 
+classification generates many errors. 
 
 
 
@@ -474,10 +474,10 @@ With the sigmoid function the results are the same.
 ![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=70%}
 
 Changing the number of orientations to 16 changed the curves with tanh function.
-It looks like a really good model because the curves are overlapping the entire
+It looks like an excellent model because the curves are overlapping the entire
 time.
 Again, the confusion matrix shows something we couldn't see with the graph. This
-model is not really good at predicting what number it sees.
+model is not perfect at predicting what number it sees.
 
 
 **Model**:
@@ -500,9 +500,9 @@ We performed various tests and modified every parameter, we didn't find the
 perfect model. As we can see in most confusion matrices, the models tend to have
 difficulties with classifying numbers between 2 and 9. We see some values that
 stick out, such as 10, 22, 30, etc. The model {sigmoid, 200 neurons, 512 batch
-size, 0.5 dropout, 4 pixels, 9 orientations, 100 epochs} is quiet good and it
+size, 0.5 dropout, 4 pixels, 9 orientations, 100 epochs} is quiet good, and it
 has the lowest amount of wrong classifications. The two curves meet at around 50
-epochs which is pretty early compared to ther other ones. In every graph we can see that
+epochs which is pretty early compared to the other ones. In every graph we can see that
 the test curve is always below the training one. This shows that the test set
 might be too easy. The f1_scores we computed were good and around 0.95. As
 stated in the RAW part, we think the f1_score is not sufficient to determine if
@@ -540,7 +540,7 @@ epochs.
 
 ![ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50.png){width=70%}
 
-We tried to decrease the number of neurons in the L4 layer. The scores are quiet
+We tried to decrease the number of neurons in the L4 layer. The scores are quite
 similar to the previous model, but the testing error fluctuates more especially
 from the start to around 25 epochs. There's still a small overfitting but the
 curves seem to be stable. 
@@ -559,7 +559,7 @@ curves seem to be stable.
 ![ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50.png){width=70%}
 
 Here we tried an extremly low number of neurons in the L4 layer. The result is
-pretty good. The score is a little bit higher than the first model tested, but
+pretty good. The score is a little higher than the first model tested, but
 the two curves are almost overlapping the entire time. It looks like a good
 model.
 The confusion matrix shows that the number 4, 5 and 9 are quiet often wrongly
@@ -579,7 +579,7 @@ classified.
 ![ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50.png){width=70%}
 
 We then chose a high number of neurons to see how the model reacts. It's
-definitely not a good model and 35 neurons is probably a bit to much for this
+definitely not a good model and 35 neurons is probably a bit too much for this
 task. There's an overfitting starting at 20 epochs. Surprisingly (or not),
 despite our bad curves the accuracy is the best we've had.
 The confusion matrix doesn't show a lot, the classification is not so bad.
@@ -595,7 +595,7 @@ The confusion matrix doesn't show a lot, the classification is not so bad.
 ![ARN-CNN-Plot-tanh-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-tanh-Batch256_25L4_Epoch50.png){width=50%}
 
 We also wanted to see how the preconfigured model would behave when changing the
-activation function in layer 4. This one uses tanh and we can clearly see it
+activation function in layer 4. This one uses tanh, and we can clearly see it
 overfits directly at 10 epochs, maybe it's just bad luck and after tweaking some
 parameters it will probably show something good, but we didn't try since we were
 told just to change the number of neurons in the feed-forward part.
@@ -612,7 +612,7 @@ told just to change the number of neurons in the feed-forward part.
 
 With sigmoid the score is really low, the accuracy close to 1.0 and the curves
 are overlapping. After 20 epochs the testing error looks like it is going away a
-bit, but the gap is still really small after 50 epochs.
+bit, but the gap is still tiny after 50 epochs.
 The confusion matrix doesn't show abnormalities, there are few errors here and
 there, but nothing out of the ordinary.
 
@@ -704,7 +704,7 @@ Non-trainable params: 0
 
 **Model**:
 
-After a few try, and since it was taking a long time to train de models, we
+After a few try, and since it was taking a long time to train the models, we
 tried a different approach: reducing the model's complexity and removing
 features and adding neurons. We removed 2 layers of features extractions and
 added neurons.
