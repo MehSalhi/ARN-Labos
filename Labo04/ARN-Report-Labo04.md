@@ -590,4 +590,57 @@ than that the digits are globally correctly classified even when changing the
 activation function. The f1_score we computed were around 0.95 with sometimes
 values up to 0.99.
 
+## Conclusion - CNN Fashion MNIST
 
+For this experiment, we used the code provided in the CNN notebook and used the
+Fashion MNIST dataset provided by Keras. We then ran the model multiple time by
+changing some settings and watching the results. Below are some results that
+lead us to our final model.
+
+
+**Model**:
+
+batch_size = 16382
+n_epoch = 100
+
+```
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ l0 (InputLayer)             [(None, 28, 28, 1)]       0         
+                                                                 
+ l1 (Conv2D)                 (None, 28, 28, 9)         234       
+                                                                 
+ l1_mp (MaxPooling2D)        (None, 14, 14, 9)         0         
+                                                                 
+ l2 (Conv2D)                 (None, 14, 14, 9)         2034      
+                                                                 
+ l2_mp (MaxPooling2D)        (None, 7, 7, 9)           0         
+                                                                 
+ l3 (Conv2D)                 (None, 7, 7, 16)          1312      
+                                                                 
+ l3_mp (MaxPooling2D)        (None, 3, 3, 16)          0         
+                                                                 
+ flat (Flatten)              (None, 144)               0         
+                                                                 
+ l4 (Dense)                  (None, 25)                3625      
+                                                                 
+ l5 (Dense)                  (None, 10)                260       
+                                                                 
+=================================================================
+Total params: 7,465
+Trainable params: 7,465
+Non-trainable params: 0
+
+```
+
+![Model 1](figures/Fashion_Output_001/ARN-Fashion_Plot_relu_100epoch_16kbatch_Output_001.png)
+
+![Model 1](figures/Fashion_Output_001/ARN-Fashion_ConfMat_relu_100epoch_16kbatch_Output_001.png)
+
+For this model, we used the same parameters as the CNN notebook. This model
+takes a long time to be trained and the performances are bad.
+
+**Model**:
+**Model**:
+**Model**:
