@@ -21,26 +21,26 @@ The algorithm used is RMSprop.
 
 The arguments used by this algorithm are:
 
-- Learning rate
+- **Learning rate**:
 A value which indicate the size of a step in the gradient descent. Defaults to 0.001.
 
-- rho:
+- **rho**:
 Parameter used to diminish the influence of the previous gradient. Defaults to 0.9.
 
-- momentum:
+- **momentum**:
 A value which give a inertia to the movement toward a minima in the gradient
 descent to avoid to get stuck to a local minimum. Defaults to 0.0.
 
-- epsilon:
+- **epsilon**:
 A small constant for numerical stability. It avoid to get a division by 0. Defaults to 1e-7.
 
-- centered:
+- **centered**:
 Boolean. If True, gradients are normalized by the estimated variance of the gradient; if False, by the uncentered second moment. Setting this to True may help with training, but is slightly more expensive in terms of computation and memory. Defaults to False.
 
-- name:
+- **name**:
 Optional name prefix for the operations created when applying gradients. Defaults to "RMSprop".
 
-- \*\*kwargs:
+- \textbf{\*\*kwargs}:
 keyword arguments. Allowed arguments are clipvalue, clipnorm, global_clipnorm. If clipvalue (float) is set, the gradient of each weight is clipped to be no higher than this value. If clipnorm (float) is set, the gradient of each weight is individually clipped so that its norm is no higher than this value. If global_clipnorm (float) is set the gradient of all weights is clipped so that their global norm is no higher than this value.
 
 The used cost function is the categorical crossentropy function. It's equation
@@ -48,8 +48,7 @@ is:
 
 Loss = $-\sum_{i=1}^{output size} y_{i} \cdot log(\hat{y_{i}})$ 
 
-(the keras doc [https://keras.io/api/optimizers/rmsprop/] was used to find the
-definition of the parameters).
+[Link to the keras doc](https://keras.io/api/optimizers/rmsprop/)
 
 # Model Complexity
 
