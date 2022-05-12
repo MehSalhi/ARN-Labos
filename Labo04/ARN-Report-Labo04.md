@@ -81,8 +81,10 @@ Number of epoch: 150
 
 The model has 784 inputs, 1 hidden layer that contains 250 neurons and 10
 outputs. The number of weights between the inputs and the hidden layer is 784 *
-750 = 196000. The number of weights between the hidden layer and the outputs is
+250 = 196000. The number of weights between the hidden layer and the outputs is
 250 \* 10 = 2500. The total number of weights is 198500.
+
+The model has 250 + 10 = 260 bias (1 per neuron).
 
 > MLP_from_HOG.ipynb
 
@@ -96,13 +98,13 @@ Activation function for output layer: softmax
 
 Neurons in hidden layer: 200
 
-Batch size: 1024
+Batch size: 512
 
-pixel per cell: 7
+pixel per cell: 4
 
-n_orientation: 16
+n_orientation: 8
 
-number of epoch: 250 (but we could see that 150 is enough)
+number of epoch: 100 
 
 Dropout: 0.5
 
@@ -111,9 +113,11 @@ outputs. The number of weights between the inputs and the hidden layer is 392 *
 200 = 78400. The number of weights between the hidden layer and the outputs is
 200 * 10 = 2000. The total number of weights is 80400.
 
+The model has 200 + 10 = 210 bias (1 per neuron).
+
 > CNN.ipynb
 
-Inputs: 144 for the MLP and a 28 X 28 pixels image as input for the features
+Inputs: 144 for the fully connected MLP and a 28 X 28 pixels image as input for the features
 extraction part. The 28 X 28 image is passed through 3 features extraction
 layers. The first one take work with 28 X 28 images, the second with 14 X 14
 images and the third with 7 X 7 images. The result is then flattened into a
@@ -121,35 +125,51 @@ vector of 144 values  and passed to the classification part.
 
 Outputs: 10 classes (numbers between 0 and 9)
 
-Activation function: sigmoid
+Activation function: ReLu
 
 Activation function for output layer: softmax
 
-Neurons in hidden layer: 25 
+Neurons in hidden layer: 5 
 
 Batch size: 256
 
 Number of epoch: 50
 
-The model has 144 inputs, 1 hidden layer that contains 25 neurons and 10
+The following calculations are made for the fully connected MLP part.
+
+The model has 144 inputs, 1 hidden layer that contains 5 neurons and 10
 outputs. The number of weights between the inputs and the hidden layer is 144 *
-25 = 3600. The number of weights between the hidden layer and the outputs is 25\* 10 = 2500. The total number of weights is 6100.
+5 = 720. The number of weights between the hidden layer and the outputs is 5 * 10 = 50. The total number of weights is 770.
+
+The model has 5 + 10 = 15 bias (one per neuron).
 
 > Fashion_MNIST.ipynb
-
-Inputs: 
+ 
+Inputs: 144 for the fully connected MLP and a 28 X 28 pixels image as input for the features
+extraction part. The 28 X 28 image is passed through 1 features extraction
+layer which work with 28 X 28 images. The result is then flattened into a vector
+of 1764 values. Those values are passe as inputs to the fully connected MLP.
 
 Outputs: 10 classes (numbers between 0 and 9)
 
-Activation function: 
+Activation function: ReLu
 
 Activation function for output layer: softmax
 
-Neurons in hidden layer: 
+Neurons in hidden layer: 100
 
-Batch size: 
+Batch size: 4096
 
-Number of epoch: 
+Number of epoch: 100 
+
+The following calculations are made for the fully connected MLP part.
+
+The model has 1764 inputs, 1 hidden layer that contains 100 neurons and 10
+outputs. The number of weights between the inputs and the hidden layer is 1764 *
+100 = 176400. The number of weights between the hidden layer and the outputs is
+100 * 10 = 1000. The total number of weights is 177400.
+
+The model has 100 + 10 = 110 bias (1 per neurons).
 
 # Deep Neural Networks
 
