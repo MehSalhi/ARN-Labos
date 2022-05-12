@@ -677,7 +677,7 @@ Non-trainable params: 0
 After a few try, and since it was taking a long time to train de models, we
 tried a different approach: reducing the model's complexity and removing
 features and adding neurons. We removed 2 layers of features extractions and
-adder neurons.
+added neurons.
 
 The model was a lot faster to train and the results were better with a test
 score of 0.32 and a test accuracy of 0.88.
