@@ -19,6 +19,7 @@ cost function is being used ? please, give the equation(s)
 
 > MLP_from_raw_data.ipynb
 
+
 The algorithm used is RMSprop. 
 
 The arguments used by this algorithm are:
@@ -40,8 +41,7 @@ keyword arguments. Allowed arguments are clipvalue, clipnorm, global_clipnorm. I
 The used cost function is the categorical crossentropy function. It's equation
 is: 
 
-![ARN-Labo04-CrossEntrEquation](figures/ARN-Labo04-CrossEntrEquation.png)
-
+Loss = $-\sum_{i=1}^{output size} y_{i} \cdot log(\hat{y_{i}})$ 
 
 # Model Complexity
 
@@ -54,6 +54,7 @@ and explain how do you get to the total number of weights.
 
 
 > MLP_from_raw_data.ipynb
+
 Inputs: 784, which are each pixels in a picture
 
 Outputs: 10 classes (numbers between 0 and 9)
@@ -73,9 +74,10 @@ Number of epoch: 150
 The model has 784 inputs, 1 hidden layer that contains 250 neurons and 10
 outputs. The number of weights between the inputs and the hidden layer is 784 *
 750 = 196000. The number of weights between the hidden layer and the outputs is
-250 * 10 = 2500. The total number of weights is 198500.
+250 \* 10 = 2500. The total number of weights is 198500.
 
 > MLP_from_HOG.ipynb
+
 Inputs: 392
 
 Outputs: 10 classes (numbers between 0 and 9)
@@ -102,6 +104,7 @@ outputs. The number of weights between the inputs and the hidden layer is 392 *
 200 * 10 = 2000. The total number of weights is 80400.
 
 > CNN.ipynb
+
 Inputs: 144 for the MLP and a 28 X 28 pixels image as input for the features
 extraction part. The 28 X 28 image is passed through 3 features extraction
 layers. The first one take work with 28 X 28 images, the second with 14 X 14
@@ -122,10 +125,10 @@ Number of epoch: 50
 
 The model has 144 inputs, 1 hidden layer that contains 25 neurons and 10
 outputs. The number of weights between the inputs and the hidden layer is 144 *
-25 = 3600. The number of weights between the hidden layer and the outputs is 25
-* 10 = 2500. The total number of weights is 6100.
+25 = 3600. The number of weights between the hidden layer and the outputs is 25\* 10 = 2500. The total number of weights is 6100.
 
 > Fashion_MNIST.ipynb
+
 Inputs: 
 
 Outputs: 10 classes (numbers between 0 and 9)
@@ -139,6 +142,7 @@ Neurons in hidden layer:
 Batch size: 
 
 Number of epoch: 
+
 # Deep Neural Networks
 
 > 3. Do the deep neural networks have much more “capacity” (i.e., do they have more
@@ -574,7 +578,7 @@ bit, but the gap is still really small after 50 epochs.
 The confusion matrix doesn't show abnormalities, there are few errors here and
 there, but nothing out of the ordinary.
 
-##**Conclusion - CNN**
+## Conclusion - CNN
 As we can see lowering the number of neurons in L4 helped
 us reduce the gap between the testing and training curves with relu activation
 function. However, when reaching really low numbers like 5, the 
