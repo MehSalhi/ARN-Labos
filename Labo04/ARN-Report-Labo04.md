@@ -628,33 +628,23 @@ lead us to our final model.
 
 **Model**:
 
+```
 batch_size = 16382
 n_epoch = 100
-
-```
+Activation: relu
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
  l0 (InputLayer)             [(None, 28, 28, 1)]       0         
-                                                                 
  l1 (Conv2D)                 (None, 28, 28, 9)         234       
-                                                                 
  l1_mp (MaxPooling2D)        (None, 14, 14, 9)         0         
-                                                                 
  l2 (Conv2D)                 (None, 14, 14, 9)         2034      
-                                                                 
  l2_mp (MaxPooling2D)        (None, 7, 7, 9)           0         
-                                                                 
  l3 (Conv2D)                 (None, 7, 7, 16)          1312      
-                                                                 
  l3_mp (MaxPooling2D)        (None, 3, 3, 16)          0         
-                                                                 
  flat (Flatten)              (None, 144)               0         
-                                                                 
  l4 (Dense)                  (None, 25)                3625      
-                                                                 
  l5 (Dense)                  (None, 10)                260       
-                                                                 
 =================================================================
 Total params: 7,465
 Trainable params: 7,465
@@ -667,8 +657,107 @@ Non-trainable params: 0
 ![Model 1](figures/Fashion_Output_001/ARN-Fashion_ConfMat_relu_100epoch_16kbatch_Output_001.png)
 
 For this model, we used the same parameters as the CNN notebook. This model
-takes a long time to be trained and the performances are bad.
+took a long time to be trained and the performances are bad with a test score
+of 0.54 and a Test accuracy of 0.79
 
 **Model**:
+
+Then we changed the activation function to tanh. The results were slightly better.
+
+```
+batch_size = 16382
+n_epoch = 100
+Activation: tanh
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ l0 (InputLayer)             [(None, 28, 28, 1)]       0         
+ l1 (Conv2D)                 (None, 28, 28, 9)         234       
+ l1_mp (MaxPooling2D)        (None, 14, 14, 9)         0         
+ l2 (Conv2D)                 (None, 14, 14, 9)         2034      
+ l2_mp (MaxPooling2D)        (None, 7, 7, 9)           0         
+ l3 (Conv2D)                 (None, 7, 7, 16)          1312      
+ l3_mp (MaxPooling2D)        (None, 3, 3, 16)          0         
+ flat (Flatten)              (None, 144)               0         
+ l4 (Dense)                  (None, 25)                3625      
+ l5 (Dense)                  (None, 10)                260       
+=================================================================
+
+Total params: 7,465
+Trainable params: 7,465
+Non-trainable params: 0
+```
+
+![Model 2](figures/Fashion_Output_002/ARN-Fashion_Plot_tanh_100epoch_16kbatch_Output_002.png)
+
+![Model 2](figures/Fashion_Output_002/ARN-Fashion_ConfMat_tanh_100epoch_16kbatch_Output_002.png)
+
 **Model**:
-**Model**:
+
+After a few try, and since it was taking a long time to train de models, we
+tried a different approach: reducing the model's complexity and removing
+features and adding neurons. We removed 2 layers of features extractions and
+adder neurons.
+
+The model was a lot faster to train and the results were better with a test
+score of 0.32 and a test accuracy of 0.88.
+
+```
+batch_size = 8192
+n_epoch = 50
+Activation Function: relu
+
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ l0 (InputLayer)             [(None, 28, 28, 1)]       0         
+ conv2d (Conv2D)             (None, 28, 28, 64)        640       
+ l1_mp (MaxPooling2D)        (None, 14, 14, 64)        0         
+ flat (Flatten)              (None, 12544)             0         
+ l4 (Dense)                  (None, 100)               1254500   
+ l5 (Dense)                  (None, 10)                1010      
+=================================================================
+Total params: 1,256,150
+Trainable params: 1,256,150
+Non-trainable params: 0
+
+```
+
+![Model 3](figures/Fashion_Output_005/ARN-Fashion_ConfMat_relu_50epoch_4kbatch_1layer_3x3_Output_005.png)
+
+![Model 3](figures/Fashion_Output_005/ARN-Fashion_Plot_relu_50epoch_4kbatch_1layer_3x3_Output_005.png)
+
+**Final Model**:
+
+After a few tries with various parameters we finally landed of the following
+model, which was faster to train and yielded the best results. Our test set
+indicate a slight overfitting but stays stable.
+
+- Test Score: 0.29
+- Test accuracy: 0.89
+- F-Score: 0.9
+- One Conv2D layer: Conv2D(9, (3, 3)...)
+
+```
+batch_size = 4096
+n_epoch = 100
+Activation Function: relu
+
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ l0 (InputLayer)             [(None, 28, 28, 1)]       0         
+ l1 (Conv2D)                 (None, 28, 28, 9)         90        
+ l1_mp (MaxPooling2D)        (None, 14, 14, 9)         0         
+ flat (Flatten)              (None, 1764)              0         
+ l4 (Dense)                  (None, 100)               176500    
+ l5 (Dense)                  (None, 10)                1010      
+=================================================================
+Total params: 177,600
+Trainable params: 177,600
+Non-trainable params: 0
+```
+
+![Final Model](figures/Fashion_Output_009-FinalModel150epoch/ARN-Fashion_Plot_relu_100epoch_4kbatch_Output_009.png)
+
+![Final Model](figures/Fashion_Output_009-FinalModel150epoch/ARN-Fashion_ConfMat_relu_100epoch_4kbatch_Output_009.png)
