@@ -19,6 +19,7 @@ cost function is being used ? please, give the equation(s)
 
 > MLP_from_raw_data.ipynb
 
+
 The algorithm used is RMSprop. 
 
 The arguments used by this algorithm are:
@@ -40,8 +41,7 @@ keyword arguments. Allowed arguments are clipvalue, clipnorm, global_clipnorm. I
 The used cost function is the categorical crossentropy function. It's equation
 is: 
 
-![ARN-Labo04-CrossEntrEquation](figures/ARN-Labo04-CrossEntrEquation.png)
-
+Loss = $-\sum_{i=1}^{output size} y_{i} \cdot log(\hat{y_{i}})$ 
 
 # Model Complexity
 
@@ -54,6 +54,7 @@ and explain how do you get to the total number of weights.
 
 
 > MLP_from_raw_data.ipynb
+
 Inputs: 784, which are each pixels in a picture
 
 Outputs: 10 classes (numbers between 0 and 9)
@@ -73,9 +74,10 @@ Number of epoch: 150
 The model has 784 inputs, 1 hidden layer that contains 250 neurons and 10
 outputs. The number of weights between the inputs and the hidden layer is 784 *
 750 = 196000. The number of weights between the hidden layer and the outputs is
-250 * 10 = 2500. The total number of weights is 198500.
+250 \* 10 = 2500. The total number of weights is 198500.
 
 > MLP_from_HOG.ipynb
+
 Inputs: 392
 
 Outputs: 10 classes (numbers between 0 and 9)
@@ -102,6 +104,7 @@ outputs. The number of weights between the inputs and the hidden layer is 392 *
 200 * 10 = 2000. The total number of weights is 80400.
 
 > CNN.ipynb
+
 Inputs: 144 for the MLP and a 28 X 28 pixels image as input for the features
 extraction part. The 28 X 28 image is passed through 3 features extraction
 layers. The first one take work with 28 X 28 images, the second with 14 X 14
@@ -122,10 +125,10 @@ Number of epoch: 50
 
 The model has 144 inputs, 1 hidden layer that contains 25 neurons and 10
 outputs. The number of weights between the inputs and the hidden layer is 144 *
-25 = 3600. The number of weights between the hidden layer and the outputs is 25
-* 10 = 2500. The total number of weights is 6100.
+25 = 3600. The number of weights between the hidden layer and the outputs is 25\* 10 = 2500. The total number of weights is 6100.
 
 > Fashion_MNIST.ipynb
+
 Inputs: 
 
 Outputs: 10 classes (numbers between 0 and 9)
@@ -139,6 +142,7 @@ Neurons in hidden layer:
 Batch size: 
 
 Number of epoch: 
+
 # Deep Neural Networks
 
 > 3. Do the deep neural networks have much more “capacity” (i.e., do they have more
@@ -178,7 +182,7 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-RAW-Plot-tanh-softmax_Batch2048_NoDropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax_Batch2048_NoDropout_Epoch150.png){width=50%}
 
-![ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150.png){width=50%}
+![ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150.png){width=70%}
 
 We first tried to train a model without a dropout. As the graph shows there is a
 problem with overfitting. Surprisingly the confusion matrix is not so bad, the
@@ -195,7 +199,7 @@ wrong classifications are low, but there are a lot.
 
 ![ARN-RAW-Plot-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
 
-![ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
+![ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=70%}
 
 We added a dropout and the result already improved. The gap has decreased but at
 the beginning the test set looks too easy. 
@@ -212,7 +216,7 @@ The confusion matrix shows higher errors but no number really stands out.
 
 ![ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
-![ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
+![ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=70%}
 
 With fewer neurons and a batch size of 4096, we get a nice result. The two
 curves are really close to each other.
@@ -230,7 +234,7 @@ are the less good classified.
 
 ![ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
-![ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
+![ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=70%}
 
 When changing the activation function to sigmoid the errors drop faster, the
 meeting point is similar to the last graph. 
@@ -248,7 +252,7 @@ The same numbers (4 and 7) are less good classified with two digits boxes.
 
 ![ARN-RAW-Plot-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
 
-![ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+![ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=70%}
 
 Setting the number of neurons to 150 changes the moment when the two curves
 meet. With tanh we see that the testing set is too simple, the testing curve is
@@ -270,14 +274,21 @@ numbers from 4 to 9.
 
 ![ARN-RAW-Plot-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
 
-![ARN-RAW-ConfMat-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+![ARN-RAW-ConfMat-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=70%}
 
 The result is similar with the sigmoid function, more epochs are needed to find
 the meeting point.
 The errors are however less significative than with tanh in the confusion
 matrix. 4, 5, 7 and 10 are the only numbers with two digits erros.
 
-**Conclusion - CNN**
+## **Conclusion - RAW**
+Removing neurons seems to delay the moment when the two curves meet. We didn't
+find a model that stands out. Some models have a good graph, but some numbers
+have a 1-2% error in the confusion matrix. When computing the f1_score we
+obtained most of the time a score around 0.95 which is good. But this score
+doesn't really represent the model's behavior. Sometimes the graph clearly shows
+an overfitting but the f1_score is 0.97. So when chosing a model we should take
+everything into account, the graph, the f1-score, the confusion matrix.
 
 > MLP_from_HOG.ipynb
 
@@ -293,7 +304,7 @@ matrix. 4, 5, 7 and 10 are the only numbers with two digits erros.
 
 ![ARN-HOG-Plot-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
-![ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+![ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=70%}
 
 We tried to use the preconfigured model but with a batch size of 512 so it could
 go faster. The scores are not so bad, but the graph shows some overfitting
@@ -315,7 +326,7 @@ The confusion matrix shows that number 3 is often assimilated as a 5 and number
 
 ![ARN-HOG-Plot-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
-![ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+![ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=70%}
 
 We decided to try different activation functions with the preconfigured model.
 This one shows the sigmoid function. As we can see this one behaves better than
@@ -338,7 +349,7 @@ The confusion matrix doesn't indicate any abnormalities.
 
 ![ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
-![ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+![ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=70%}
 
 Those previous attempts where done with 4 pixels, we also tried 7 pixels. This
 example with the tanh function clearly depicts a test set that is too easy. The
@@ -361,12 +372,13 @@ wrong classification in one box.
 
 ![ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
 
-![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
+![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=70%}
 
 By changing the activation function to sigmoid we see a clear improvment with a
 slightly lower score.
 The confusion matrix also improved, but those numbers are still too high. We can
 actually see a value of 30 which is not good.
+
 **Model**:
 
 - Activation function: tanh
@@ -380,13 +392,13 @@ actually see a value of 30 which is not good.
 
 ![ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
 
-Manque confmat
+![ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=70%}
 
 We tried to increase the batch size which improved the curve for tanh activation
 function and lowered the gap between the two curves. The test set looks still
 too easy for the model.
-
-Commenter matrice confusion.
+The confusion matrix shows really bad results. Numbers from 2 to 9
+classification generates many erros. 
 
 
 
@@ -403,7 +415,7 @@ Commenter matrice confusion.
 
 ![ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
 
-![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=70%}
 
 With the sigmoid function the results are the same.
 
@@ -421,7 +433,7 @@ With the sigmoid function the results are the same.
 
 ![ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
+![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=70%}
 
 Changing the number of orientations to 16 changed the curves with tanh function.
 It looks like a really good model because the curves are overlapping the entire
@@ -442,8 +454,10 @@ model is not really good at predicting what number it sees.
 
 ![ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
+![ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=70%}
 
+
+## **Conclusion - HOG**
 We performed various tests and modified every parameter, we didn't find the
 perfect model. As we can see in most confusion matrices, the models tend to have
 difficulties with classifying numbers between 2 and 9. We see some values that
@@ -452,9 +466,9 @@ size, 0.5 dropout, 4 pixels, 9 orientations, 100 epochs} is quiet good and it
 has the lowest amount of wrong classifications. The two curves meet at around 50
 epochs which is pretty early compared to ther other ones. In every graph we can see that
 the test curve is always below the training one. This shows that the test set
-might be too easy.
-
-**Conclusion - HOG**
+might be too easy. The f1_scores we computed were good and around 0.95. As
+stated in the RAW part, we think the f1_score is not sufficient to determine if
+a model is good.
 
 > CNN.ipynb
 
@@ -467,7 +481,7 @@ might be too easy.
 
 ![ARN-CNN-Plot-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_25L4_Epoch50.png){width=50%}
 
-![ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50.png){width=50%}
+![ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50.png){width=70%}
 
 As we can see, the results with this preconfigured model are not that bad. The
 score is low and the accuracy is close to 1.0. However, from 10 epochs this
@@ -486,7 +500,7 @@ epochs.
 
 ![ARN-CNN-Plot-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_10L4_Epoch50.png){width=50%}
 
-![ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50.png){width=50%}
+![ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50.png){width=70%}
 
 We tried to decrease the number of neurons in the L4 layer. The scores are quiet
 similar to the previous model, but the testing error fluctuates more especially
@@ -504,7 +518,7 @@ curves seem to be stable.
 
 ![ARN-CNN-Plot-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_5L4_Epoch50.png){width=50%}
 
-![ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50.png){width=50%}
+![ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50.png){width=70%}
 
 Here we tried an extremly low number of neurons in the L4 layer. The result is
 pretty good. The score is a little bit higher than the first model tested, but
@@ -524,7 +538,7 @@ classified.
 
 ![ARN-CNN-Plot-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_35L4_Epoch50.png){width=50%}
 
-![ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50.png){width=50%}
+![ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50.png){width=70%}
 
 We then chose a high number of neurons to see how the model reacts. It's
 definitely not a good model and 35 neurons is probably a bit to much for this
@@ -564,7 +578,8 @@ bit, but the gap is still really small after 50 epochs.
 The confusion matrix doesn't show abnormalities, there are few errors here and
 there, but nothing out of the ordinary.
 
-**Conclusion - CNN**: As we can see lowering the number of neurons in L4 helped
+## Conclusion - CNN
+As we can see lowering the number of neurons in L4 helped
 us reduce the gap between the testing and training curves with relu activation
 function. However, when reaching really low numbers like 5, the 
 really low numbers of neurons, the confusion matrix shows something pretty
@@ -572,6 +587,7 @@ different that the plot. Some numbers are not classified properly such as 4,5
 and 9. Sometimes it represents 1-2% of the predictions for one particular numbers. It's not a big
 deal, but if we need to be really precise, this result is note enough. Other
 than that the digits are globally correctly classified even when changing the
-activation function.
+activation function. The f1_score we computed were around 0.95 with sometimes
+values up to 0.99.
 
 
