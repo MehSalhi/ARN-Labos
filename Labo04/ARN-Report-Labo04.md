@@ -130,6 +130,10 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150.png){width=50%}
 
+We first tried to train a model without a dropout. As the graph shows there is a
+problem with overfitting. Surprisingly the confusion matrix is not so bad, the
+wrong classifications are low, but there are a lot.
+
 **Model**:
 
 - Activation function: tanh
@@ -142,6 +146,10 @@ differences in results. Are there particular digits that are frequently confused
 ![ARN-RAW-Plot-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
 
 ![ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
+
+We added a dropout and the result already improved. The gap has decreased but at
+the beginning the test set looks too easy. 
+The confusion matrix shows higher errors but no number really stands out.
 
 **Model**:
 
@@ -156,6 +164,11 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
+With fewer neurons and a batch size of 4096, we get a nice result. The two
+curves are really close to each other.
+We begin to see numbers with two digits in the confusion matrix. Numbers 4 and 7
+are the less good classified.
+
 **Model**:
 
 - Activation function: sigmoid
@@ -167,7 +180,12 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
-![ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
+![ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
+
+When changing the activation function to sigmoid the errors drop faster, the
+meeting point is similar to the last graph. 
+The same numbers (4 and 7) are less good classified with two digits boxes.
+
 
 **Model**:
 
@@ -182,6 +200,15 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
 
+Setting the number of neurons to 150 changes the moment when the two curves
+meet. With tanh we see that the testing set is too simple, the testing curve is
+always below below the training one. More epochs are needed to find a stable
+ground.
+Too few neurons is not a good idea, it increases the amount of errors. We can
+see numbers up to 22. This model seems to have more difficulty to classify
+numbers from 4 to 9.
+
+
 **Model**:
 
 - Activation function: sigmoid
@@ -195,7 +222,12 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-RAW-ConfMat-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
 
+The result is similar with the sigmoid function, more epochs are needed to find
+the meeting point.
+The errors are however less significative than with tanh in the confusion
+matrix. 4, 5, 7 and 10 are the only numbers with two digits erros.
 
+**Conclusion - CNN**
 
 > MLP_from_HOG.ipynb
 
@@ -213,6 +245,13 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
+We tried to use the preconfigured model but with a batch size of 512 so it could
+go faster. The scores are not so bad, but the graph shows some overfitting
+starting from 10 epochs. 
+The confusion matrix shows that number 3 is often assimilated as a 5 and number
+5 as a 3. Those are the only values that strike out.
+
+
 **Model**:
 
 - Activation function: sigmoid
@@ -227,6 +266,14 @@ differences in results. Are there particular digits that are frequently confused
 ![ARN-HOG-Plot-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
 ![ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+
+We decided to try different activation functions with the preconfigured model.
+This one shows the sigmoid function. As we can see this one behaves better than
+the previous and there's almost no overfitting. However we can see that the
+testing error is below the testing error until around 50 epochs which might
+signify that the test set is a little bit too easy.
+The confusion matrix doesn't indicate any abnormalities.
+
 
 **Model**:
 
@@ -243,6 +290,14 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
+Those previous attempts where done with 4 pixels, we also tried 7 pixels. This
+example with the tanh function clearly depicts a test set that is too easy. The
+testing curves never overlaps the testing one. We notice that the test score is
+really bad compared to the previous models.
+Of course the confusion matrix shows a similar result. This model doesn't seem
+to recognize the numbers between 2 and 9. In some cases we can see up to 35
+wrong classification in one box.
+
 **Model**:
 
 - Activation function: sigmoid
@@ -258,6 +313,10 @@ differences in results. Are there particular digits that are frequently confused
 
 ![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
 
+By changing the activation function to sigmoid we see a clear improvment with a
+slightly lower score.
+The confusion matrix also improved, but those numbers are still too high. We can
+actually see a value of 30 which is not good.
 **Model**:
 
 - Activation function: tanh
@@ -272,6 +331,13 @@ differences in results. Are there particular digits that are frequently confused
 ![ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
 
 Manque confmat
+
+We tried to increase the batch size which improved the curve for tanh activation
+function and lowered the gap between the two curves. The test set looks still
+too easy for the model.
+
+Commenter matrice confusion.
+
 
 
 **Model**:
@@ -289,6 +355,9 @@ Manque confmat
 
 ![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
 
+With the sigmoid function the results are the same.
+
+
 **Model**:
 
 - Activation function: tanh
@@ -304,6 +373,13 @@ Manque confmat
 
 ![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
 
+Changing the number of orientations to 16 changed the curves with tanh function.
+It looks like a really good model because the curves are overlapping the entire
+time.
+Again, the confusion matrix shows something we couldn't see with the graph. This
+model is not really good at predicting what number it sees.
+
+
 **Model**:
 
 - Activation function: relu
@@ -318,33 +394,17 @@ Manque confmat
 
 ![ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
-**Model**:
+We performed various tests and modified every parameter, we didn't find the
+perfect model. As we can see in most confusion matrices, the models tend to have
+difficulties with classifying numbers between 2 and 9. We see some values that
+stick out, such as 10, 22, 30, etc. The model {sigmoid, 200 neurons, 512 batch
+size, 0.5 dropout, 4 pixels, 9 orientations, 100 epochs} is quiet good and it
+has the lowest amount of wrong classifications. The two curves meet at around 50
+epochs which is pretty early compared to ther other ones. In every graph we can see that
+the test curve is always below the training one. This shows that the test set
+might be too easy.
 
-- Activation function: sigmoid
-- Neurons: 150
-- Batch size: 1024
-- Dropout: 0.5
-- Epochs: 200
-- Pixels: 7
-- Orientations: 8
-
-![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
-
-![ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
-
-**Model**:
-
-- Activation function: sigmoid
-- Neurons: 250
-- Batch size: 1024
-- Dropout: 0.5
-- Epochs: 200
-- Pixels: 7
-- Orientations: 8
-
-![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
-
-
+**Conclusion - HOG**
 
 > CNN.ipynb
 
