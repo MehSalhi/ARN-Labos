@@ -126,8 +126,19 @@ outputs. The number of weights between the inputs and the hidden layer is 144 *
 * 10 = 2500. The total number of weights is 6100.
 
 > Fashion_MNIST.ipynb
+Inputs: 
 
+Outputs: 10 classes (numbers between 0 and 9)
 
+Activation function: 
+
+Activation function for output layer: softmax
+
+Neurons in hidden layer: 
+
+Batch size: 
+
+Number of epoch: 
 # Deep Neural Networks
 
 > 3. Do the deep neural networks have much more “capacity” (i.e., do they have more
