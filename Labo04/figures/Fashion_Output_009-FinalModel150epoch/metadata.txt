@@ -1,0 +1,35 @@
+
+l0 = Input(shape=(height, width, 1), name='l0')
+#l1 = Conv2D(9, (5, 5), padding='same', activation='relu', kernel_initializer='he_uniform', name='l1')(l0)
+l1 = Conv2D(9, (3, 3), padding='same', activation='relu', name='l1')(l0)
+l1_mp = MaxPooling2D(pool_size=(2, 2), name='l1_mp')(l1)
+
+flat = Flatten(name='flat')(l1_mp)
+
+l4 = Dense(100, activation='relu', name='l4')(flat)
+
+l5 = Dense(n_classes, activation='softmax', name='l5')(l4)
+
+
+batch_size = 4096
+n_epoch = 100
+
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ l0 (InputLayer)             [(None, 28, 28, 1)]       0         
+                                                                 
+ l1 (Conv2D)                 (None, 28, 28, 9)         90        
+                                                                 
+ l1_mp (MaxPooling2D)        (None, 14, 14, 9)         0         
+                                                                 
+ flat (Flatten)              (None, 1764)              0         
+                                                                 
+ l4 (Dense)                  (None, 100)               176500    
+                                                                 
+ l5 (Dense)                  (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 177,600
+Trainable params: 177,600
+Non-trainable params: 0
