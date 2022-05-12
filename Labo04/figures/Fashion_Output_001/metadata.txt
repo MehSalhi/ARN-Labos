@@ -1,0 +1,49 @@
+l0 = Input(shape=(height, width, 1), name='l0')
+
+l1 = Conv2D(9, (5, 5), padding='same', activation='relu', name='l1')(l0)
+l1_mp = MaxPooling2D(pool_size=(2, 2), name='l1_mp')(l1)
+
+l2 = Conv2D(9, (5, 5), padding='same', activation='relu', name='l2')(l1_mp)
+l2_mp = MaxPooling2D(pool_size=(2, 2), name='l2_mp')(l2)
+
+l3 = Conv2D(16, (3, 3), padding='same', activation='relu', name='l3')(l2_mp)
+l3_mp = MaxPooling2D(pool_size=(2, 2), name='l3_mp')(l3)
+
+flat = Flatten(name='flat')(l3_mp)
+
+l4 = Dense(25, activation='relu', name='l4')(flat)
+
+l5 = Dense(n_classes, activation='softmax', name='l5')(l4)
+
+model = Model(inputs=l0, outputs=l5)
+model.summary()
+
+batch_size = 16382
+n_epoch = 100
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ l0 (InputLayer)             [(None, 28, 28, 1)]       0         
+                                                                 
+ l1 (Conv2D)                 (None, 28, 28, 9)         234       
+                                                                 
+ l1_mp (MaxPooling2D)        (None, 14, 14, 9)         0         
+                                                                 
+ l2 (Conv2D)                 (None, 14, 14, 9)         2034      
+                                                                 
+ l2_mp (MaxPooling2D)        (None, 7, 7, 9)           0         
+                                                                 
+ l3 (Conv2D)                 (None, 7, 7, 16)          1312      
+                                                                 
+ l3_mp (MaxPooling2D)        (None, 3, 3, 16)          0         
+                                                                 
+ flat (Flatten)              (None, 144)               0         
+                                                                 
+ l4 (Dense)                  (None, 25)                3625      
+                                                                 
+ l5 (Dense)                  (None, 10)                260       
+                                                                 
+=================================================================
+Total params: 7,465
+Trainable params: 7,465
+Non-trainable params: 0

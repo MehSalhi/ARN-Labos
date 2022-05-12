@@ -13,7 +13,6 @@ toc-own-page: true
 ...
 
 # Learning algorithm 
-
 > 1. What is the learning algorithm being used to optimize the weights of the neural
 networks? What are the parameters (arguments) being used by that algorithm? What
 cost function is being used ? please, give the equation(s)
@@ -125,40 +124,78 @@ differences in results. Are there particular digits that are frequently confused
 
 > MLP_from_raw_data.ipynb
 
+**Model**:
+
+- Activation function: tanh
+- Neurons: 300
+- Dropout: -
+- Batch size: 2048
+- Epochs: 150 
+
 ![ARN-RAW-Plot-tanh-softmax_Batch2048_NoDropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax_Batch2048_NoDropout_Epoch150.png){width=50%}
 
 ![ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_NoDropout_Epoch150.png){width=50%}
 
-We can see in this experiment that there's clearly an overfitting. 
+**Model**:
+
+- Activation function: tanh
+- Neurons: 300           
+- Dropout: 0.5
+- Batch size: 2048
+- Epochs: 150
+
 
 ![ARN-RAW-Plot-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
 
 ![ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
 
+**Model**:
 
-![ARN-RAW-Plot-sigmoid-softmax_Batch2048_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax_Batch2048_Dropout_Epoch150.png){width=50%}
+- Activation function: tanh
+- Neurons: 250           
+- Dropout: 0.5
+- Batch size: 4096
+- Epochs: 150
 
-![ARN-RAW-ConfMat-sigmoid-softmax_Batch2048_Droptout_Epoch150](figures/ARN-RAW-ConfMat-sigmoid-softmax_Batch2048_Droptout_Epoch150.png){width=50%}
 
 ![ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
 ![ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
+**Model**:
+
+- Activation function: sigmoid
+- Neurons: 250           
+- Dropout: 0.5
+- Batch size: 4096
+- Epochs: 150
+
+
 ![ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
 
 ![ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMax-sigmoid-softmax-Neur250_Batch4096_Dropout_Epoch150.png)
 
-![ARN-RAW-Plot-relu_softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-relu_softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
+**Model**:
 
-![ARN-RAW-ConfMat-relu-softmax-Neur250_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-relu-softmax-Neur250_Batch4096_Dropout_Epoch150.png){width=50%}
+- Activation function: tanh
+- Neurons: 150           
+- Dropout: 0.5
+- Batch size: 4096
+- Epochs: 150
 
-![ARN-RAW-Plot-relu-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-relu-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
-
-![ARN-RAW-ConfMat-relu-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-relu-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
 
 ![ARN-RAW-Plot-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
 
 ![ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-ConfMat-tanh-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
+
+**Model**:
+
+- Activation function: sigmoid
+- Neurons: 150           
+- Dropout: 0.5
+- Batch size: 4096
+- Epochs: 150
+
 
 ![ARN-RAW-Plot-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150](figures/ARN-RAW-Plot-sigmoid-softmax-Neur150_Batch4096_Dropout_Epoch150.png){width=50%}
 
@@ -168,89 +205,269 @@ We can see in this experiment that there's clearly an overfitting.
 
 > MLP_from_HOG.ipynb
 
+**Model**:
+
+- Activation function: relu
+- Neurons: 200
+- Batch size: 512
+- Dropout: 0.5
+- Epochs: 100
+- Pixels: 4
+- Orientations: 8
+
 ![ARN-HOG-Plot-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
 ![ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-relu-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
-![ARN-HOG-Plot-tanh-softmax-Neur200-Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-tanh-softmax-Neur200-Batch512_Dropout_Epoch100.png){width=50%}
+**Model**:
 
-![ARN-HOG-ConfMat-tanh-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-tanh-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+- Activation function: sigmoid
+- Neurons: 200
+- Batch size: 512
+- Dropout: 0.5
+- Epochs: 100
+- Pixels: 4
+- Orientations: 8
+
 
 ![ARN-HOG-Plot-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
 ![ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-sigmoid-softmax-Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
-![ARN-HOG-Plot-relu-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-relu-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+**Model**:
 
-![ARN-HOG-ConfMat-relu-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-relu-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
+- Activation function: tanh
+- Neurons: 200
+- Batch size: 512
+- Dropout: 0.5
+- Epochs: 100
+- Pixels: 7
+- Orientations: 8
+
 
 ![ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
 ![ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100](figures/ARN-HOG-ConfMat-tanh-Pixel7_Neur200_Batch512_Dropout_Epoch100.png){width=50%}
 
+**Model**:
+
+- Activation function: sigmoid
+- Neurons: 200
+- Batch size: 512
+- Dropout: 0.5
+- Epochs: 250
+- Pixels: 7
+- Orientations: 8
+
+
 ![ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
 
 ![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
 
-![ARN-HOG-Plot-relu-Pixel7_Neur200_Batch512_Dropout_Epoch250](figures/ARN-HOG-Plot-relu-Pixel7_Neur200_Batch512_Dropout_Epoch250.png){width=50%}
+**Model**:
 
-![ARN-HOG-Plot-relu-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-relu-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+- Activation function: tanh
+- Neurons: 200
+- Batch size: 1024
+- Dropout: 0.5
+- Epochs: 250
+- Pixels: 7
+- Orientations: 8
+
 
 ![ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-tanh-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+
+Manque confmat
+
+
+**Model**:
+
+- Activation function: sigmoid
+- Neurons: 200
+- Batch size: 1024
+- Dropout: 0.5
+- Epochs: 250
+- Pixels: 7
+- Orientations: 8
+
 
 ![ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
 
 ![ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
 
-![ARN-HOG-Plot-sigmoid-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+**Model**:
 
-![ARN-HOG-Plot-relu-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250](figures/ARN-HOG-Plot-relu-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch250.png){width=50%}
+- Activation function: tanh
+- Neurons: 200
+- Batch size: 1024
+- Dropout: 0.5
+- Epochs: 200
+- Pixels: 7
+- Orientations: 16
+
 
 ![ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
 
 ![ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-tanh-Pixel7_Or16_Neur200_Batch1024_Dropout_Epoch200.png){width=50%}
 
+**Model**:
+
+- Activation function: relu
+- Neurons: 150
+- Batch size: 1024
+- Dropout: 0.5
+- Epochs: 200
+- Pixels: 7
+- Orientations: 8
+
 ![ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
 ![ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-relu-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
+
+**Model**:
+
+- Activation function: sigmoid
+- Neurons: 150
+- Batch size: 1024
+- Dropout: 0.5
+- Epochs: 200
+- Pixels: 7
+- Orientations: 8
 
 ![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
 ![ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200](figures/ARN-HOG-ConfMat-sigmoid-Pixel7_Or8_Neur150_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-Plot-tanh-Pixel7_Or8_Neur150-Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or8_Neur150-Batch1024_Dropout_Epoch200.png){width=50%}
+**Model**:
 
-![ARN-HOG-Plot-relu-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-relu-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
+- Activation function: sigmoid
+- Neurons: 250
+- Batch size: 1024
+- Dropout: 0.5
+- Epochs: 200
+- Pixels: 7
+- Orientations: 8
 
 ![ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-sigmoid-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
 
-![ARN-HOG-Plot-tanh-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200](figures/ARN-HOG-Plot-tanh-Pixel7_Or8_Neur250_Batch1024_Dropout_Epoch200.png){width=50%}
 
 
 > CNN.ipynb
+
+**Model**:
+
+- L4 neurons: 25
+- L4 activation function: Relu
+- Batch size: 2048
+- Epochs: 50
 
 ![ARN-CNN-Plot-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_25L4_Epoch50.png){width=50%}
 
 ![ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_25L4_Epoch50.png){width=50%}
 
+As we can see, the results with this preconfigured model are not that bad. The
+score is low and the accuracy is close to 1.0. However, from 10 epochs this
+model slowly starts to overfit. We can clearly see the gap between the training
+error and the testing error increases as we continue to iterate through the
+epochs.
+
+
+**Model**:
+
+- L4 neurons: 10                                        
+- L4 activation function: Relu
+- Batch size: 2048
+- Epochs: 50
+
+
 ![ARN-CNN-Plot-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_10L4_Epoch50.png){width=50%}
 
 ![ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_10L4_Epoch50.png){width=50%}
+
+We tried to decrease the number of neurons in the L4 layer. The scores are quiet
+similar to the previous model, but the testing error fluctuates more especially
+from the start to around 25 epochs. There's still a small overfitting but the
+curves seem to be stable. 
+
+
+**Model**:
+
+- L4 neurons: 5                                        
+- L4 activation function: Relu
+- Batch size: 2048
+- Epochs: 50
 
 
 ![ARN-CNN-Plot-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_5L4_Epoch50.png){width=50%}
 
 ![ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_5L4_Epoch50.png){width=50%}
 
+Here we tried an extremly low number of neurons in the L4 layer. The result is
+pretty good. The score is a little bit higher than the first model tested, but
+the two curves are almost overlapping the entire time. It looks like a good
+model.
+The confusion matrix shows that the number 4, 5 and 9 are quiet often wrongly
+classified.
+
+
+**Model**:
+
+- L4 neurons: 35                                        
+- L4 activation function: Relu
+- Batch size: 2048
+- Epochs: 50
+
+
 ![ARN-CNN-Plot-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-Plot-relu-Batch256_35L4_Epoch50.png){width=50%}
 
 ![ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50](figures/ARN-CNN-ConfMat-relu-Batch256_35L4_Epoch50.png){width=50%}
 
+We then chose a high number of neurons to see how the model reacts. It's
+definitely not a good model and 35 neurons is probably a bit to much for this
+task. There's an overfitting starting at 20 epochs. Surprisingly (or not),
+despite our bad curves the accuracy is the best we've had.
+The confusion matrix doesn't show a lot, the classification is not so bad.
+
+**Model**:
+
+- L4 neurons: 25                                        
+- L4 activation function: tanh
+- Batch size: 2048
+- Epochs: 50
+
 
 ![ARN-CNN-Plot-tanh-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-tanh-Batch256_25L4_Epoch50.png){width=50%}
 
+We also wanted to see how the preconfigured model would behave when changing the
+activation function in layer 4. This one uses tanh and we can clearly see it
+overfits directly at 10 epochs, maybe it's just bad luck and after tweaking some
+parameters it will probably show something good, but we didn't try since we were
+told just to change the number of neurons in the feed-forward part.
+
+
+**Model**:
+
+- L4 neurons: 25                                        
+- L4 activation function: sigmoid
+- Batch size: 2048
+- Epochs: 50
 
 ![ARN-CNN-Plot-sigmoid-Batch256_25L4_Epoch50](figures/ARN-CNN-Plot-sigmoid-Batch256_25L4_Epoch50.png){width=50%}
 
-![ARN-CNN-ConfMat-sigmoid-Batch256_25L4_Epoch50](figures/ARN-CNN-ConfMat-sigmoid-Batch256_25L4_Epoch50.png){width=50%}
+With sigmoid the score is really low, the accuracy close to 1.0 and the curves
+are overlapping. After 20 epochs the testing error looks like it is going away a
+bit, but the gap is still really small after 50 epochs.
+The confusion matrix doesn't show abnormalities, there are few errors here and
+there, but nothing out of the ordinary.
+
+**Conclusion - CNN**: As we can see lowering the number of neurons in L4 helped
+us reduce the gap between the testing and training curves with relu activation
+function. However, when reaching really low numbers like 5, the 
+really low numbers of neurons, the confusion matrix shows something pretty
+different that the plot. Some numbers are not classified properly such as 4,5
+and 9. Sometimes it represents 1-2% of the predictions for one particular numbers. It's not a big
+deal, but if we need to be really precise, this result is note enough. Other
+than that the digits are globally correctly classified even when changing the
+activation function.
+
 
