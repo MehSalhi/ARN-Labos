@@ -17,6 +17,10 @@ toc-own-page: true
 Our application is made in the context of the course ARN (Apprentissage par
 réseau de neurone) At the HEIG-VD.
 Its goal is to classify different types of nuts.
+In order to achieve this goal, we decided to take several pictures of cashew
+nuts, hazelnuts, and almonds with various backgrounds, various specimens and various angles. We then completed our dataset with pictures coming from the web. 
+#TODO compléter avec la méthode utilisée
+
 
 # The problem
 
