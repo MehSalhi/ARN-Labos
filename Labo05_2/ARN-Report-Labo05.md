@@ -38,19 +38,33 @@ pecan, hazelnuts and cashews, using a camera on a portable device.
 We took photos of the different nuts on various background (color, texture) with
 various angles and zoom.
 
-TODO: data augmentation, crop, zoom, format, ...
-
+##TODO: data augmentation, crop, zoom, format, ...
+Our whole images dataset is rescaled and resized in order to always give the
+same dimensions as input for our model.
+In order to have slightly different images at each iteration, we applied some
+data augmentations to our training set. It include RandomFlip, RandomZoom,
+RandomRotation and RandomContrast. We chose to use value between -0.2 and 0.3
+and not higher because we saw that the resultant pictures were too deformed, and
+thus could maybe mislead our model.
 
 # Model creation
 
-TODO: parameters, ...
+##TODO: parameters, ...
+
 
 
 # Results
 
-TODO: screenshots, confusion matrix, etc
+##TODO: screenshots, confusion matrix, etc
 
 
 # Conclusion
 
+We tried several configurations for our model (1 layer, 2 layers, 3 layers, 256
+neurons, 8 neurons, dropout, etc...) and most of the time, we managed to get
+high accuracies and fine confusion matrix. But even so, we had problems once our
+model loaded on the app. Indeed, the app detected each classes with great
+confidence, but not for the right nut. 
+We believe that our model is too influenced by the background due to a to
+different images set between our 3 classes.
 TODO: ARN IS FUN
