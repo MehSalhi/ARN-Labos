@@ -169,11 +169,15 @@ we added :
 
 > a. Provide your plots and confusion matrices
 
+![Result Graph](figures/ResultGraph.png)
+
+![ConfusionMatrix](figures/ConfusionMatrix.png)
+
 > b. Provide the f-score you obtain for each of your classes.
 
-> c. Provide the results you have after evaluating your model on the test set. Comment if the
-performance on the test set is close to the validation performance. What about the
-performance of the system in the real world ?
+> c. Provide the results you have after evaluating your model on the test set. 
+Comment if the performance on the test set is close to the validation 
+performance. What about the performance of the system in the real world ?
 
 > d. Present an analysis of the relevance of the trained system using the Class Activation
 Map methods (grad-cam)
@@ -182,6 +186,12 @@ Map methods (grad-cam)
 those errors.
 
 > f. Based on your results how could you improve your dataset ?
+
+Various solutions :
+
+- Using more data augmentation
+- Taking more photos
+
 
 > g. Observe which classes are confused. Does it surprise you? In your opinion, what can
 cause those confusions ? What happens when you use your embedded system to
