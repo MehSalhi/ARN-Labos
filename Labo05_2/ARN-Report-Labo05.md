@@ -181,6 +181,13 @@ we added :
 
 > b. Provide the f-score you obtain for each of your classes.
 
+The accuracy for the 'Noisette' class : 0.8983050847457628
+The F1-score for 'Noisette' class : 0.8666666666666666
+The accuracy for the 'Pecan' class : 0.923728813559322
+The F1-score for the 'Pecan' class : 0.8941176470588235
+The accuracy for the 'Cajoux' class : 0.923728813559322
+The F1-score for the 'Cajoux' class : 0.8524590163934426
+
 > c. Provide the results you have after evaluating your model on the test set. 
 Comment if the performance on the test set is close to the validation 
 performance. What about the performance of the system in the real world ?
