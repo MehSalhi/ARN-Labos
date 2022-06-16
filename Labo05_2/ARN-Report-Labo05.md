@@ -26,7 +26,8 @@ then add some layers and train them to our specific application.
 
 Our application could be used for various purpose. For example, allow users to
 identify different nuts, for allergy purpose. This could also be used for
-industrial application when sorting nuts or detecting allergens in food.
+industrial application when sorting nuts or detecting allergens in food or even
+better, an app on social media that tells you what sort of nut you are !
 
 # The problem
 
@@ -87,8 +88,11 @@ activated by them.
 So we loaded our model on our phones and tried in realistic conditions. It was
 the first time the results were good using our phones.
 
-![PhoneResults](figures/PhoneResults.png)
+![PhoneResults Good classification](figures/PhoneResults.png){width=80%}
 
+Still, our model is very easy to trick by changing the angle or the background.
+
+![PhoneResults Bad classification](figures/PhoneResults_bad.png){width=80%}
 
 ## Parameters
 
