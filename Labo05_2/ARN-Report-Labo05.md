@@ -59,7 +59,7 @@ same backgrounds for each nut so the main difficulty of the model will be to
 find the features that will help him differentiate the nuts. We hoped it would
 concentrate on the details of the nut.
 
-![Intra-class diversity](figures/Intraclass_diversity.png) 
+![Intra-class diversity](figures/Intraclass_Diversity.png) 
 
 # Dataset and Data preparation
 
@@ -180,20 +180,30 @@ we added :
 ![ConfusionMatrix](figures/ConfusionMatrix.png)
 
 > b. Provide the f-score you obtain for each of your classes.
-
+```
 The accuracy for the 'Noisette' class : 0.8983050847457628
 The F1-score for 'Noisette' class : 0.8666666666666666
 The accuracy for the 'Pecan' class : 0.923728813559322
 The F1-score for the 'Pecan' class : 0.8941176470588235
 The accuracy for the 'Cajoux' class : 0.923728813559322
 The F1-score for the 'Cajoux' class : 0.8524590163934426
+```
 
 > c. Provide the results you have after evaluating your model on the test set. 
 Comment if the performance on the test set is close to the validation 
 performance. What about the performance of the system in the real world ?
 
+We see that the performance of our test set is better than the validations
+set one. We managed to get better results, but oddly the models with better
+performances during the training were not accurate at all in the rel world. 
+
+On the other hand, the model that we present in this report manage to classify
+our three nuts classes with great certainty in a lot of cases.
+
 > d. Present an analysis of the relevance of the trained system using the Class Activation
 Map methods (grad-cam)
+
+
 
 > e. Provide some of your misclassified images (test set and real-world tests) and comment
 those errors.
