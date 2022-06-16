@@ -195,6 +195,7 @@ Various solutions :
 
 - Using more data augmentation
 - Taking more photos
+- Enriching our dataset with pictures from the web
 
 
 > g. Observe which classes are confused. Does it surprise you? In your opinion, what can
