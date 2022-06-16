@@ -59,6 +59,8 @@ same backgrounds for each nut so the main difficulty of the model will be to
 find the features that will help him differentiate the nuts. We hoped it would
 concentrate on the details of the nut.
 
+![Intra-class diversity](figures/Intraclass_diversity.png) 
+
 # Dataset and Data preparation
 
 We took photos of the different nuts on various backgrounds (color, texture) with
@@ -90,7 +92,7 @@ We used the provided code to train, test and validate our model with KFold.
 # Model creation
 
 In order to find our model, we proceeded the same way as for all the precedent labs: trying something
-and then find tune until we get acceptable results (plot, confusion matrix, etc...).
+and then fine tune until we get acceptable results (plot, confusion matrix, etc...).
 
 We had issues finding the right model. Our results were sometimes good with the train set and validation set but then 
 terrible with the app on the mobile device. It was also confusing to find the right parameters and layers configurations. 
