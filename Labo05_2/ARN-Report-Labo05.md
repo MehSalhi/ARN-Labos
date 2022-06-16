@@ -46,10 +46,23 @@ similarity).
 The problem is to be able to identify and differentiate between 3 sorts of nuts:
 pecan, hazelnuts and cashews, using a camera on a portable device.
 
+![Dataset Histogram](figures/DatasetHist.png)
+
+Our dataset contains around 200 pictures of cashew nuts, 200 hazelnuts and
+around 170 pecan pictures. It can be considered as Small Data compared to
+ImageNet which has 1000 images per category.
+
+We tried to change the background behind the nuts to add more variations but
+also to increase intra-class diversity. We wanted to avoid that the model learns
+only the background to determine the type of nut in the picture. We used the
+same backgrounds for each nut so the main difficulty of the model will be to
+find the features that will help him differentiate the nuts. We hoped it would
+concentrate on the details of the nut.
+
 # Dataset and Data preparation
 
-We took photos of the different nuts on various background (color, texture) with
-various angles and zoom without our smartphones. Our dataset consist of 587 
+We took photos of the different nuts on various backgrounds (color, texture) with
+various angles and zooms without our smartphones. Our dataset consist of 587 
 images of pecans, cashews and hazlenuts. We were careful to take pictures that
 would represent the final condition best, that is, trying to identify a nut with a
 mobile device.
@@ -58,15 +71,12 @@ mobile device.
 
 ![Sample of our dataset](figures/SampleDataset.png)
 
-![Dataset Histogram](figures/DatasetHist.png)
-
 We had to take more and more pictures because our first dataset had too much of
 the same background. Our final dataset consist of close-up pictures of the nuts
 with a "neutral" background so that our model can extract clear features plus
 more realistic picture taken at various angles and backgrounds so that it does
 not overfit and can work better in realistic conditions.
 
-##TODO: data augmentation, crop, zoom, format, ...
 Our whole images dataset is rescaled and resized in order to always give the
 same dimensions as input for our model.
 In order to have slightly different images at each iteration, we applied some
@@ -75,13 +85,7 @@ RandomRotation and RandomContrast. We chose to use value between -0.2 and 0.3
 and not higher because we saw that the resultant pictures were too deformed, and
 thus could maybe mislead our model.
 
-
-> describe the pre-processing steps you needed (e.g., resizing, normalization,
-filtering of collected images, perhaps you discarded some data). Describe the train, validation
-and test datasets split.
-
-
-
+We used the provided code to train, test and validate our model with KFold.
 
 # Model creation
 
