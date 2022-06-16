@@ -14,6 +14,12 @@ toc-own-page: true
 
 # Introduction
 
+> describe the context of your application and its potential uses, briefly describe
+how you are going to proceed (methodology), that is, what data are you going to collect (your
+own pictures of.... , maybe extra-pictures collected from the web, etc), what methods are you
+going to use (e.g., CNNs, transfer learning)
+
+
 Our application is made in the context of the course ARN (Apprentissage par
 réseau de neurone) At the HEIG-VD.
 Its goal is to classify different types of nuts.
@@ -30,6 +36,12 @@ industrial application when sorting nuts or detecting allergens in food or even
 better, an app on social media that tells you what sort of nut you are !
 
 # The problem
+
+> describe what are the classes you are learning to detect using a CNN, describe the
+database you collected, show the number of images per class or a histogram of classes (is it a
+balanced or an unbalanced dataset? Small or big Data ?) and provide some examples showing
+the intra-class diversity and the apparent difficulty for providing a solution (inter-class
+similarity).
 
 The problem is to be able to identify and differentiate between 3 sorts of nuts:
 pecan, hazelnuts and cashews, using a camera on a portable device.
@@ -63,7 +75,44 @@ RandomRotation and RandomContrast. We chose to use value between -0.2 and 0.3
 and not higher because we saw that the resultant pictures were too deformed, and
 thus could maybe mislead our model.
 
+
+> describe the pre-processing steps you needed (e.g., resizing, normalization,
+filtering of collected images, perhaps you discarded some data). Describe the train, validation
+and test datasets split.
+
+
+
+
 # Model creation
+
+In order to find our model, we proceeded the same way as for all the precedent labs: trying something
+and then find tune until we get acceptable results (plot, confusion matrix, etc...).
+
+We had issues finding the right model. Our results were sometimes good with the train set and validation set but then 
+terrible with the app on the mobile device. It was also confusing to find the right parameters and layers configurations. 
+Adding layer or neuron seemed to just make things worse, as did removing layers or neurons.
+
+
+> a. What hyperparameters did you choose (nb epochs, optimizer, learning rate, ...) ?
+
+
+> b. What is the architecture of your final model ? How many trainable parameters does it
+have?
+
+
+
+> c. How did you perform the transfer learning ? Explain why did you use transfer learning,
+e.g., what is the advantage of using transfer learning for this problem and why it might
+help ?
+
+Transfert learning is extremely valuable as it allows us to leverage the power of another model that is already trained. 
+We are using MobileNet V2, a convolutional network optimised for mobile devices. The first layers are the pre-trained 
+layers of MobileNet on top of which we add our layers which are the only one that are being trained. Transfer learning 
+works because many layers do the same things on any model, that is, extracting low level features (for example edges), 
+and medium level features (for example shapes) which are common to any images. Without transfer learning, we would have 
+to train our model every time for this same task.
+
+
 
 We tried a lot of different variation. We started with very simple architectures
 like a single layer of 20 neurons, 2 layers, 3 layers. We also tried 250
@@ -118,6 +167,27 @@ we added :
 
 ##TODO: screenshots, confusion matrix, etc
 
+> a. Provide your plots and confusion matrices
+
+> b. Provide the f-score you obtain for each of your classes.
+
+> c. Provide the results you have after evaluating your model on the test set. Comment if the
+performance on the test set is close to the validation performance. What about the
+performance of the system in the real world ?
+
+> d. Present an analysis of the relevance of the trained system using the Class Activation
+Map methods (grad-cam)
+
+> e. Provide some of your misclassified images (test set and real-world tests) and comment
+those errors.
+
+> f. Based on your results how could you improve your dataset ?
+
+> g. Observe which classes are confused. Does it surprise you? In your opinion, what can
+cause those confusions ? What happens when you use your embedded system to
+recognize objects that don’t belong to any classes in your dataset ? How does your
+system work if your object is placed in a different background ?
+
 
 # Conclusion
 
@@ -129,3 +199,7 @@ confidence, but not for the right nut.
 We believe that our model is too influenced by the background due to a to
 different images set between our 3 classes.
 TODO: ARN IS FUN
+
+
+> finalize your report with some conclusions, summarize your results, mention the
+limits of your system and potential future work
