@@ -21,7 +21,7 @@ going to use (e.g., CNNs, transfer learning)
 
 
 Our application is made in the context of the course ARN (Apprentissage par
-réseau de neurone) At the HEIG-VD.
+réseau de neurone) at the HEIG-VD.
 Its goal is to classify different types of nuts.
 In order to achieve this goal, we decided to take several pictures of cashew
 nuts, hazelnuts, and pecans with various backgrounds, various specimens and various angles. 
@@ -55,7 +55,7 @@ ImageNet which has 1000 images per category.
 We tried to change the background behind the nuts to add more variations but
 also to increase intra-class diversity. We wanted to avoid that the model learns
 only the background to determine the type of nut in the picture. We used the
-same backgrounds for each nut so the main difficulty of the model will be to
+same kind of backgrounds for each nut so the main difficulty of the model will be to
 find the features that will help it differentiate the nuts. We hoped it would
 concentrate on the details of the nut.
 
@@ -82,7 +82,7 @@ not overfit and can work better in realistic conditions.
 Our whole images dataset is rescaled and resized in order to always give the
 same dimensions as input for our model.
 In order to have slightly different images at each iteration, we applied some
-data augmentations to our training set. It include RandomFlip, RandomZoom,
+data augmentations to our training set. It includes RandomFlip, RandomZoom,
 RandomRotation and RandomContrast. We chose to use value between -0.2 and 0.3
 and not higher because we saw that the resultant pictures were too deformed, and
 thus could maybe mislead our model.
@@ -195,7 +195,7 @@ performance. What about the performance of the system in the real world ?
 
 We see that the performance of our test set is better than the validations
 set one. We managed to get better results, but oddly the models with better
-performances during the training were not accurate at all in the rel world. 
+performances during the training were not accurate at all in the real world. 
 
 On the other hand, the model that we present in this report manage to classify
 our three nuts classes with great certainty in a lot of cases.
@@ -216,6 +216,13 @@ forget how good humans are at spatial and visual recognition.
 
 > e. Provide some of your misclassified images (test set and real-world tests) and comment
 those errors.
+
+Test set: 
+
+We can see below some misclassified images. It is mostly due to the complex
+background, the weird angles of the nuts or the zoom.
+
+![Test Result Misclassified](figures/TestResultMisclassified.png)
 
 Real-world test:
 
