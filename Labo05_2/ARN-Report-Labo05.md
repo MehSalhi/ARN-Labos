@@ -105,6 +105,22 @@ Adding layer or neuron seemed to just make things worse, as did removing layers 
 > b. What is the architecture of your final model ? How many trainable parameters does it
 have?
 
+Final model :
+
+```
+Total params: 5,145,667
+Trainable params: 3,299,843
+Non-trainable params: 1,845,824
+
+```
+
+Our final model consist of the frozen MobileNetV2 layers plus the 4th last layers 
+we added :
+
+- Dense(1024, activation='relu')
+- Dense(1024, activation='relu')
+- Dense(512, activation='relu'),
+- Dense(len(LABEL_NAMES), activation='softmax')
 
 
 > c. How did you perform the transfer learning ? Explain why did you use transfer learning,
@@ -145,33 +161,10 @@ the first time the results were good using our phones.
 
 ![PhoneResults Good classification](figures/PhoneResults.png){width=80%}
 
-Still, our model is very easy to trick by changing the angle or the background.
-
-![PhoneResults Bad classification](figures/PhoneResults_bad.png){width=80%}
-
 ## Parameters
-
-Final model :
-
-```
-Total params: 5,145,667
-Trainable params: 3,299,843
-Non-trainable params: 1,845,824
-
-```
-
-Our final model consist of the frozen MobileNetV2 layers plus the 4th last layers 
-we added :
-
-- Dense(1024, activation='relu')
-- Dense(1024, activation='relu')
-- Dense(512, activation='relu'),
-- Dense(len(LABEL_NAMES), activation='softmax')
 
 
 # Results
-
-##TODO: screenshots, confusion matrix, etc
 
 > a. Provide your plots and confusion matrices
 
@@ -203,10 +196,40 @@ our three nuts classes with great certainty in a lot of cases.
 > d. Present an analysis of the relevance of the trained system using the Class Activation
 Map methods (grad-cam)
 
+We can see on the grad-cam results below that our model is mostly activated by
+the nuts and seems to center around them. There are some images where the nuts
+aren't even detected or the model focus on another part. The background seems to
+be the main problem. This is interesting because it forces use to approach the
+problem from a different angle and try to understand how the model "sees" the
+objects. Objects that seems easy for us to identify or isolate on a busy
+background are often very hard to find for a machine learning model. We tend to
+forget how good humans are at spatial and visual recognition.
 
+![Grad Cam](figures/GradCam.png)
 
 > e. Provide some of your misclassified images (test set and real-world tests) and comment
 those errors.
+
+Real-worl test:
+
+Our model is very easy to trick by changing the angle or the background.
+
+For example for the cashew, our model is able to recognize them very easily as
+long as we can clearly see it's curved shape. If we change the angle, it
+sometime classifies it as a hazlenut.
+
+The same goes for the pecan. Up close, our model is able to recognize it, but
+from afar it looks like a round brown shape and our model will classify it as a
+hazlenut.
+
+By adding object into the frame, the models also start to make wrong
+predictions. Sometime it makes sense to us, for example when adding a brown comb
+we could think that it might have the same color or texture as a hazlenut. Other
+time, for example on the last picture, we added a white and red jar lid that
+doesn't look at all like a hazlenut and yez our model start classifying a cashew
+as a hazlenut.
+
+![PhoneResults Bad classification](figures/PhoneResults_bad.png){width=80%}
 
 > f. Based on your results how could you improve your dataset ?
 
@@ -215,6 +238,7 @@ Various solutions :
 - Using more data augmentation
 - Taking more photos
 - Enriching our dataset with pictures from the web
+- Fine tunning the model, adding epochs, ...
 
 
 > g. Observe which classes are confused. Does it surprise you? In your opinion, what can
@@ -232,8 +256,6 @@ model loaded on the app. Indeed, the app detected each classes with great
 confidence, but not for the right nut. 
 We believe that our model is too influenced by the background due to a to
 different images set between our 3 classes.
-TODO: ARN IS FUN
-
 
 > finalize your report with some conclusions, summarize your results, mention the
 limits of your system and potential future work
