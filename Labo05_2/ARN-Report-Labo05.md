@@ -14,9 +14,8 @@ toc-own-page: true
 
 # Introduction
 
-> describe the context of your application and its potential uses, briefly describe
-
-How you are going to proceed (methodology), that is, what data are you going to collect (your
+> Describe the context of your application and its potential uses, briefly describe
+how you are going to proceed (methodology), that is, what data are you going to collect (your
 own pictures of.... , maybe extra-pictures collected from the web, etc), what methods are you
 going to use (e.g., CNNs, transfer learning)
 
