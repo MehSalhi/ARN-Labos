@@ -210,7 +210,7 @@ forget how good humans are at spatial and visual recognition.
 > e. Provide some of your misclassified images (test set and real-world tests) and comment
 those errors.
 
-Real-worl test:
+Real-world test:
 
 Our model is very easy to trick by changing the angle or the background.
 
@@ -246,6 +246,18 @@ cause those confusions ? What happens when you use your embedded system to
 recognize objects that don’t belong to any classes in your dataset ? How does your
 system work if your object is placed in a different background ?
 
+As we can see on our confusion matrix, each class has approximately the same
+level of confusion. It isn't a surprise as we did our best to take pictures with
+several different backgrounds, orientations, etc... 
+
+When we try to recognize something that our model hasn't learned, it still try
+to classify it as one of our three nuts type. One possible upgrade that could be
+done would have been to create a class "other" to classify every object that
+doesn't have at least 70% of recognition.
+
+The background continue to influe on our classification, but not too much. Our
+model choose the correct classes even with different backgrounds in most cases, 
+but can be tricked with parameters like angle, distance, etc...
 
 # Conclusion
 
