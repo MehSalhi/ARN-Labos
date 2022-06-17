@@ -15,7 +15,8 @@ toc-own-page: true
 # Introduction
 
 > describe the context of your application and its potential uses, briefly describe
-how you are going to proceed (methodology), that is, what data are you going to collect (your
+
+How you are going to proceed (methodology), that is, what data are you going to collect (your
 own pictures of.... , maybe extra-pictures collected from the web, etc), what methods are you
 going to use (e.g., CNNs, transfer learning)
 
@@ -37,13 +38,13 @@ better, an app on social media that tells you what sort of nut you are !
 
 # The problem
 
-> describe what are the classes you are learning to detect using a CNN, describe the
+> Describe what are the classes you are learning to detect using a CNN, describe the
 database you collected, show the number of images per class or a histogram of classes (is it a
 balanced or an unbalanced dataset? Small or big Data ?) and provide some examples showing
 the intra-class diversity and the apparent difficulty for providing a solution (inter-class
 similarity).
 
-The problem is to be able to identify and differentiate between 3 sorts of nuts:
+The problem is to be able to identify and differentiate 3 sorts of nuts:
 pecan, hazelnuts and cashews, using a camera on a portable device.
 
 ![Dataset Histogram](figures/DatasetHist.png)
@@ -56,7 +57,7 @@ We tried to change the background behind the nuts to add more variations but
 also to increase intra-class diversity. We wanted to avoid that the model learns
 only the background to determine the type of nut in the picture. We used the
 same backgrounds for each nut so the main difficulty of the model will be to
-find the features that will help him differentiate the nuts. We hoped it would
+find the features that will help it differentiate the nuts. We hoped it would
 concentrate on the details of the nut.
 
 ![Intra-class diversity](figures/Intraclass_Diversity.png) 
@@ -100,6 +101,13 @@ Adding layer or neuron seemed to just make things worse, as did removing layers 
 
 
 > a. What hyperparameters did you choose (nb epochs, optimizer, learning rate, ...) ?
+
+- optimizer: RMS prop (default value: 0.001)
+- loss function: sparse categorical cross-entropy
+- batchsize: 16 
+- number of epochs: 8
+- learning rate : default value 0.001
+- momentum : default value 0
 
 
 > b. What is the architecture of your final model ? How many trainable parameters does it
@@ -261,6 +269,9 @@ but can be tricked with parameters like angle, distance, etc...
 
 # Conclusion
 
+> finalize your report with some conclusions, summarize your results, mention the
+limits of your system and potential future work
+
 We tried several configurations for our model (1 layer, 2 layers, 3 layers, 256
 neurons, 8 neurons, dropout, etc...) and most of the time, we managed to get
 high accuracies and fine confusion matrix. But even so, we had problems once our
@@ -269,5 +280,4 @@ confidence, but not for the right nut.
 We believe that our model is too influenced by the background due to a to
 different images set between our 3 classes.
 
-> finalize your report with some conclusions, summarize your results, mention the
-limits of your system and potential future work
+
