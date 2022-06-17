@@ -282,8 +282,22 @@ We tried several configurations for our model (1 layer, 2 layers, 3 layers, 256
 neurons, 8 neurons, dropout, etc...) and most of the time, we managed to get
 high accuracies and fine confusion matrix. But even so, we had problems once our
 model loaded on the app. Indeed, the app detected each classes with great
-confidence, but not for the right nut. 
-We believe that our model is too influenced by the background due to a to
-different images set between our 3 classes.
+confidence, but not for the right nut. We just didn't have enough neurons for
+such a task as this was solved by using more neurons on our final model.
+
+This project was interesting because we had to think about all the different 
+parts of a data driven project, that is: Data creation, Data processing,
+Data Storage (some of our pictures were big and posed some problems to store on
+GitHub), Data Usage, Data archiving and Data destruction. The fact that the
+model takes time to train forced us to plan and think more before launching the
+training process. It is also interesting to see how a model react to various
+feature of our dataset that we wouldn't think of.
+
+Our model is still limited by having only 3 classes. Its performances are also
+not too good if the background is complex or the image quality bad. Also, as we
+already mentionned, it can easily fail when the angle or the zoom level changes.
+
+However, now that the basic architecture is created, it would be very easy to add new
+labels without too much effort which shows the power of machine learning.
 
 
